@@ -1,0 +1,31 @@
+{
+  "name": "html_css-course",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuyHT130204/HTML_CSS-Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HuyHT130204/HTML_CSS-Course/issues"
+  },
+  "homepage": "https://github.com/HuyHT130204/HTML_CSS-Course#readme",
+  "description": "",
+  "dependencies": {
+    "html_css-course": "file:"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.13.3",
+    "parcel": "^2.13.3",
+    "posthtml": "^0.16.6",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^2.0.1",
+    "sass": "^1.85.0"
+  }
+}
