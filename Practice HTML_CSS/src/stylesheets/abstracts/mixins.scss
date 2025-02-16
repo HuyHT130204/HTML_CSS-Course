@@ -1,0 +1,13 @@
+@use "variables" as *;
+
+@mixin outside-stroke($stroke-color, $shadow-size) {
+    text-shadow: 
+        $shadow-size $shadow-size 0 $stroke-color, 
+        (-$shadow-size) (-$shadow-size) 0 $stroke-color, 
+        (-$shadow-size) $shadow-size 0 $stroke-color, 
+        $shadow-size (-$shadow-size) 0 $stroke-color,
+        0 $shadow-size 0 $stroke-color, 
+        0 (-$shadow-size) 0 $stroke-color, 
+        $shadow-size 0 0 $stroke-color, 
+        (-$shadow-size) 0 0 $stroke-color;
+}
