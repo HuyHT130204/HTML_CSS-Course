@@ -1,0 +1,229 @@
+@use "../abstracts/" as *;
+
+.about {
+    padding: 4rem 0;
+}
+
+.about__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Desktop layout */
+@media (min-width: 769px) {
+    .about__content {
+        grid-template-areas:
+            "header right"
+            "features right";
+    }
+
+    .about__header {
+        grid-area: header;
+    }
+
+    .about__right {
+        grid-area: right;
+    }
+
+    .about__features {
+        grid-area: features;
+    }
+}
+
+.about__header {
+    text-align: left;
+    max-width: 90%;
+}
+
+.about__subtitle {
+    color: $primary-color;
+    font-size: 19.4px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.about__title {
+    font-size: 39.8px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: $dark-text;
+}
+
+.about__description {
+    color: $gray-text;
+    max-width: 95%;
+}
+
+.about__features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    max-width: 70%; /* Giữ nguyên max-width ban đầu */
+    margin-left: 0; /* Đảm bảo căn trái ở màn hình lớn */
+  }
+  
+  .feature__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: $background-light;
+    border-radius: 2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .feature__icon {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: $primary-color;
+  }
+  
+  .feature__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .feature__content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .feature__title {
+    font-size: 19.4px;
+    font-weight: 500;
+    color: $primary-color;
+    margin-bottom: 0.25rem;
+    white-space: pre-line;
+  }
+  
+  .feature__description {
+    color: $gray-text;
+    line-height: 1.5;
+    max-width: 80%;
+  }
+  
+  /* Media queries cho responsive */
+  @media (max-width: 768px) {
+    .about__features {
+      max-width: 100%;
+      padding: 0 1rem;
+      align-items: center;
+      margin: 0 auto;
+    }
+    
+    .feature__item {
+      max-width: 100%;
+    }
+    
+    .feature__description {
+      max-width: 100%;
+    }
+  }
+/* Gallery Layout */
+.about__right {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    transform: translate(-80px, 70px);
+    transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .about__right {
+        transform: translate(-30px, 0);
+    }
+}
+
+.gallery__main {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 100%;
+    transform: translateY(20px);
+}
+
+.gallery__item:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    transform: translateY(-40px);
+}
+
+.gallery__item:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+    transform: translateY(-105px);
+}
+
+.gallery__main,
+.gallery__item {
+    position: relative;
+}
+
+.gallery__main img {
+    width: 130%;
+    height: 92%;
+    padding-right: 12px;
+    border-radius: 0px;
+}
+
+.gallery__item:nth-child(2) img {
+    width: 125%;
+    height: auto;
+    object-fit: contain;
+    transform: translateX(20px);
+}
+
+.gallery__item:nth-child(3) img {
+    width: 125%;
+    height: auto;
+    object-fit: contain;
+    transform: translateX(20px);
+}
+
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .about__content {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "right"
+            "features";
+    }
+
+    .about__header {
+        grid-area: header;
+    }
+
+    .about__right {
+        grid-area: right;
+        margin: 2rem 0;
+        gap: 0.75rem;
+    }
+
+    .about__features {
+        grid-area: features;
+    }
+
+    .about__title {
+        font-size: 2rem;
+    }
+
+    .gallery__main img,
+    .gallery__item img {
+        border-radius: 0.75rem;
+    }
+}
