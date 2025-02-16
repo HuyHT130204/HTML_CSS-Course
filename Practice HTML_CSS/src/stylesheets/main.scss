@@ -1,4 +1,5 @@
-@use './layout/header.scss';
+@use "layout/" as *;
+@use "components";
 
 * {
     margin: 0;
