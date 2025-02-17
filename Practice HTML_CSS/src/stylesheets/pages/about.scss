@@ -6,7 +6,7 @@
     background-size: auto;
 }
 
-@media (max-width: 768px) { /* Điều chỉnh kích thước theo nhu cầu */
+@media (max-width: 768px) { 
     .about {
         background: none;
     }
@@ -23,7 +23,7 @@
 }
 @media (max-width: 768px) {
     .about {
-        background-position: center top; /* Di chuyển ảnh lên trên */
+        background-position: center top;
     }
 }
 
@@ -83,8 +83,8 @@
     flex-direction: column;
     gap: 1.5rem;
     align-items: flex-start;
-    max-width: 70%; /* Giữ nguyên max-width ban đầu */
-    margin-left: 0; /* Đảm bảo căn trái ở màn hình lớn */
+    max-width: 70%;
+    margin-left: 0;
   }
   
   .feature__item {
@@ -164,10 +164,10 @@
   /* Est-2022 logo với kích thước tương đối */
   .est-logo {
     position: absolute;
-    width: 45%; /* Thay đổi từ px sang % */
-    min-width: 120px; /* Kích thước tối thiểu */
-    max-width: 206px; /* Kích thước tối đa */
-    aspect-ratio: 1; /* Giữ tỷ lệ khung hình vuông */
+    width: 45%; 
+    min-width: 120px; 
+    max-width: 206px; 
+    aspect-ratio: 1; 
     top: 50%;
     left: 50%;
     transform: translate(-25%, -200%);
@@ -183,10 +183,10 @@
   /* Decorative SVG với kích thước tương đối */
   .decorative-circle {
     position: absolute;
-    width: 27%; /* Thay đổi từ px sang % */
-    min-width: 80px; /* Kích thước tối thiểu */
-    max-width: 140px; /* Kích thước tối đa */
-    aspect-ratio: 1; /* Giữ tỷ lệ khung hình vuông */
+    width: 27%;
+    min-width: 80px; 
+    max-width: 140px; 
+    aspect-ratio: 1; 
     top: 50%;
     left: 50%;
     transform: translate(90%, 100%);
