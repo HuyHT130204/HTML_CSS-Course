@@ -305,6 +305,7 @@
 /* Mobile layout */
 @media (max-width: 768px) {
     .about__content {
+      margin: 15px;
         grid-template-columns: 1fr;
         grid-template-areas:
             "header"
