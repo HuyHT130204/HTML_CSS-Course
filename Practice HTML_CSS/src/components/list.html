@@ -1,0 +1,46 @@
+<if condition="type === 'menu'">
+    <ul class="navbar__menu">
+        <each loop="item in {{ list }}">
+            <li>
+                <a href="{{ item.href }}" class="{{ item.active ? 'active' : '' }}">
+                    {{ item.text }}
+                </a>
+            </li>
+        </each>
+    </ul>
+</if>
+
+<if condition="type === 'logo'">
+    <each loop="item in {{ list }}">
+        <a href="{{ item.href }}" class="navbar__logo">
+            <div class="logo-container">
+                <img src="{{ item.iconSrc }}" alt="{{ item.iconAlt }}">
+            </div>
+            {{ item.text }}
+        </a>
+    </each>
+</if>
+
+<if condition="type === 'buttons'">
+    <each loop="item in {{ list }}">
+        <a href="{{ item.href }}" class="{{ item.className }}">
+            <img src="{{ item.iconSrc }}" alt="{{ item.iconAlt }}">
+            {{ item.text }}
+        </a>
+    </each>
+</if>
+
+<if condition="type === 'location'">
+    <each loop="item in {{ list }}">
+        <img src="{{ item.iconSrc }}" alt="{{ item.iconAlt }}">
+        <span>{{ item.text }}</span>
+    </each>
+</if>
+
+<if condition="type === 'contact'">
+    <each loop="item in {{ list }}">
+        <a href="{{ item.href }}">
+            <img src="{{ item.iconSrc }}" alt="{{ item.iconAlt }}">
+            {{ item.text }}</a>
+    </each>
+</if>

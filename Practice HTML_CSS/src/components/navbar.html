@@ -10,33 +10,64 @@
         </label>
 
         <div class="navbar__left">
-            <ul class="navbar__menu">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#listings">Listings</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-            </ul>
+            <include
+                src="./components/list.html"
+                locals='{
+                    "type": "menu",
+                    "list": [
+                        {"href": "#home", "text": "Home", "active": true},
+                        {"href": "#about", "text": "About", "active": false},
+                        {"href": "#listings", "text": "Listings", "active": false},
+                        {"href": "#services", "text": "Services", "active": false},
+                        {"href": "#blogs", "text": "Blogs", "active": false}
+                    ]
+                }'
+            >
+            </include>
         </div>
 
         <div class="navbar__center">
-            <a href="/" class="navbar__logo">
-                <div class="logo-container">
-                    <img src="../assets/icons/logo.svg" alt="Home">
-                </div>
-                Rezilla
-            </a>
+            <include
+                src="./components/list.html"
+                locals='{
+                    "type": "logo",
+                    "list": [
+                        {
+                            "href": "/",
+                            "text": "Rezilla",
+                            "iconSrc": "../assets/icons/logo.svg",
+                            "iconAlt": "Home"
+                        }
+                    ]
+                }'
+            >
+            </include>
         </div>
 
         <div class="navbar__right">
-            <a href="/login" class="navbar__login">
-                <img src="../assets/icons/login.svg" alt="Login">
-                Login/Register
-            </a>
-            <a href="/add-listing" class="navbar__add-listing">
-                <img src="../assets/icons/logo.svg" alt="Home">
-                Add Listing
-            </a>
+            <include
+                src="./components/list.html"
+                locals='{
+                    "type": "buttons",
+                    "list": [
+                        {
+                            "href": "/login",
+                            "text": "Login/Register",
+                            "iconSrc": "../assets/icons/login.svg",
+                            "iconAlt": "Login",
+                            "className": "navbar__login"
+                        },
+                        {
+                            "href": "/add-listing",
+                            "text": "Add Listing",
+                            "iconSrc": "../assets/icons/logo.svg",
+                            "iconAlt": "Home",
+                            "className": "navbar__add-listing"
+                        }
+                    ]
+                }'
+            >
+            </include>
         </div>
     </div>
 </nav>
