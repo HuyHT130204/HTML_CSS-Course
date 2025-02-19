@@ -1,5 +1,7 @@
+@use "../abstracts/" as *;
+
 .navbar {
-    background-color: #FFFFFF;
+    background-color: $background-light;
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     position: relative;
@@ -26,7 +28,7 @@
             top: 100%;
             left: 0;
             width: 100%;
-            background-color: #FFFFFF;
+            background-color: $background-light;
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -83,21 +85,21 @@
 
         a {
             text-decoration: none;
-            color: #2B2B2B;
+            color: $dark-text;
             font-size: 1rem;
             font-weight: 500;
             padding: 8px 0;
             white-space: nowrap;
             
             &.active {
-                color: #2B2B2B;
+                color: $dark-text;
                 background-color: rgba(67, 97, 238, 0.3);
                 padding: 8px 16px;
                 border-radius: 30px;
             }
 
             &:hover:not(.active) {
-                color: #3A0CA3;
+                color: $listing-bg;
             }
         }
     }
@@ -129,7 +131,7 @@
     }
 
     &__login {
-        color: #2B2B2B;
+        color: $dark-text;
 
         @media (max-width: 1350px) {
             font-size: 0.9rem;
@@ -137,8 +139,8 @@
     }
 
     &__add-listing {
-        background-color: #3A0CA3;
-        color: #FFFFFF;
+        background-color: $listing-bg;
+        color: $background-light;
         padding: 12px 24px;
         border-radius: 30px;
         transition: background-color 0.3s ease;
@@ -149,7 +151,7 @@
         }
 
         &:hover {
-            background-color: #2E0A82;
+            background-color: $primary-color;
         }
     }
 }
@@ -157,7 +159,7 @@
 .logo-container {
     width: 50px;
     height: 50px;
-    background-color: #3A0CA3;
+    background-color: $listing-bg;
     border-radius: 50%;
     display: flex;
     align-items: center;
