@@ -1,0 +1,14 @@
+<if condition="type === 'location'">
+    <each loop="item in {{ list }}">
+        <img src="{{ item.iconSrc }}" alt="{{ item.iconAlt }}">
+        <span>{{ item.text }}</span>
+    </each>
+</if>
+
+<if condition="type === 'contact'">
+    <each loop="item in {{ list }}">
+        <a href="{{ item.href }}">
+            <img src="{{ item.iconSrc }}" alt="{{ item.iconAlt }}">
+            {{ item.text }}</a>
+    </each>
+</if>

@@ -1,0 +1,47 @@
+<header>
+    <div class="top-header">
+        <div class="container">
+            <div class="top-header__location">
+                <include
+                    src="./components/list.html"
+                    locals='{
+                        "type": "location",
+                        "list": [
+                            {
+                                "iconSrc": "../assets/icons/pin.svg",
+                                "iconAlt": "Location",
+                                "text": "Rezilla, 18 Grattan St, Brooklyn"
+                            }
+                        ]
+                    }'
+                >
+                </include>
+            </div>
+            <div class="top-header__contact">
+                <include
+                    src="./components/list.html"
+                    locals='{
+                        "type": "contact",
+                        "list": [
+                            {
+                                "href": "tel:+12062142298",
+                                "iconSrc": "../assets/icons/phone.svg",
+                                "iconAlt": "Phone",
+                                "text": "+1 206-214-2298"
+                            },
+                            {
+                                "href": "mailto:support@rezilla.com",
+                                "iconSrc": "../assets/icons/mail.svg",
+                                "iconAlt": "Mail",
+                                "text": "support@rezilla.com"
+                            }
+                        ]
+                    }'
+                >
+                </include>
+            </div>
+        </div>
+    </div>
+
+    <include src="components/navbar.html"></include>
+</header>
