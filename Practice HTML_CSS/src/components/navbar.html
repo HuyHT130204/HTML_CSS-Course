@@ -2,72 +2,66 @@
     <div class="container">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label">
-            <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 0H0V2.18182H24V0Z" fill="#0B090A"/>
-                <path d="M24 9.81819H0V12H24V9.81819Z" fill="#0B090A"/>
-                <path d="M24 19.6364H0V21.8182H24V19.6364Z" fill="#0B090A"/>
-            </svg>
+          <figure>
+            <img src="../assets/icons/hamburger.svg" alt="Menu" width="24" height="22">
+          </figure>
         </label>
-
-        <div class="navbar__left">
-            <include
-                src="./components/list.html"
-                locals='{
-                    "type": "menu",
-                    "list": [
-                        {"href": "#home", "text": "Home", "active": true},
-                        {"href": "#about", "text": "About", "active": false},
-                        {"href": "#listings", "text": "Listings", "active": false},
-                        {"href": "#services", "text": "Services", "active": false},
-                        {"href": "#blogs", "text": "Blogs", "active": false}
-                    ]
-                }'
-            >
-            </include>
-        </div>
-
-        <div class="navbar__center">
-            <include
-                src="./components/list.html"
-                locals='{
-                    "type": "logo",
-                    "list": [
-                        {
-                            "href": "/",
-                            "text": "Rezilla",
-                            "iconSrc": "../assets/icons/logo.svg",
-                            "iconAlt": "Home"
-                        }
-                    ]
-                }'
-            >
-            </include>
-        </div>
-
-        <div class="navbar__right">
-            <include
-                src="./components/list.html"
-                locals='{
-                    "type": "buttons",
-                    "list": [
-                        {
-                            "href": "/login",
-                            "text": "Login/Register",
-                            "iconSrc": "../assets/icons/login.svg",
-                            "iconAlt": "Login",
-                            "className": "navbar__login"
-                        },
-                        {
-                            "href": "/add-listing",
-                            "text": "Add Listing",
-                            "iconSrc": "../assets/icons/logo.svg",
-                            "iconAlt": "Home",
-                            "className": "navbar__add-listing"
-                        }
-                    ]
-                }'
-            >
-            </include>
-        </div>
+        
+  
+      <div class="navbar__left">
+        <include
+          src="./components/list.html"
+          locals='{
+            "list": [
+              {"text": "Home", "active": true},
+              {"text": "About", "active": false},
+              {"text": "Listings", "active": false},
+              {"text": "Services", "active": false},
+              {"text": "Blogs", "active": false}
+            ]
+          }'
+        >
+        </include>
+      </div>
+  
+      <div class="navbar__center">
+        <include
+          src="./components/list.html"
+          locals='{
+            "list": [
+              {
+                "text": "Rezilla",
+                "iconSrc": "../assets/icons/logo.svg",
+                "iconAlt": "Home",
+                "className": "navbar__logo"
+              }
+            ]
+          }'
+        >
+        </include>
+      </div>
+  
+      <div class="navbar__right">
+        <include
+          src="./components/list.html"
+          locals='{
+            "list": [
+              {
+                "text": "Login/Register",
+                "iconSrc": "../assets/icons/login.svg",
+                "iconAlt": "Login",
+                "className": "navbar__login"
+              },
+              {
+                "text": "Add Listing",
+                "iconSrc": "../assets/icons/logo.svg",
+                "iconAlt": "Home",
+                "className": "navbar__addlisting"
+              }
+            ]
+          }'
+        >
+        </include>
+      </div>
     </div>
-</nav>
+  </nav>

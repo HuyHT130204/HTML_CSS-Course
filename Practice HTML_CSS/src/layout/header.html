@@ -1,39 +1,40 @@
 <header>
     <div class="top-header">
         <div class="container">
+            <!-- Location Section -->
             <div class="top-header__location">
                 <include
                     src="./components/list.html"
                     locals='{
-                        "type": "location",
                         "list": [
                             {
+                                "text": "Rezilla, 18 Grattan St, Brooklyn",
                                 "iconSrc": "../assets/icons/pin.svg",
-                                "iconAlt": "Location",
-                                "text": "Rezilla, 18 Grattan St, Brooklyn"
+                                "iconAlt": "Location"
                             }
                         ]
                     }'
                 >
                 </include>
             </div>
+
+            <!-- Contact Section -->
             <div class="top-header__contact">
                 <include
                     src="./components/list.html"
                     locals='{
-                        "type": "contact",
                         "list": [
                             {
-                                "href": "tel:+12062142298",
+                                "text": "+1 206-214-2298",
                                 "iconSrc": "../assets/icons/phone.svg",
                                 "iconAlt": "Phone",
-                                "text": "+1 206-214-2298"
+                                "href": "tel:+12062142298"
                             },
                             {
-                                "href": "mailto:support@rezilla.com",
+                                "text": "support@rezilla.com",
                                 "iconSrc": "../assets/icons/mail.svg",
                                 "iconAlt": "Mail",
-                                "text": "support@rezilla.com"
+                                "href": "mailto:support@rezilla.com"
                             }
                         ]
                     }'
