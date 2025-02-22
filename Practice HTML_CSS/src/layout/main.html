@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream
-=======
 <!-- Homepage -->
-
 <div class="homepage">
     <img src="../assets/icons/homepage-bg.svg" class="homepage__bg" alt="Background decoration">
     
@@ -15,24 +12,26 @@
 
             <div class="image-slider">
                 <button class="slider-btn slider-btn--prev">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <figure>
+                        <img src="../assets/icons/prev.svg" alt="Prev">
+                    </figure>
                 </button>
                 <figure class="slider-content">
                     <img src="../assets/images/hotel1.png" alt="Property">
                 </figure>
                 <button class="slider-btn slider-btn--next">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <figure>
+                        <img src="../assets/icons/next.svg" alt="Next">
+                    </figure>
                 </button>
-                <div class="slider-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+                <include
+                    src="./components/slider-dots.html" 
+                    locals='{
+                        "dots": [{"active": true},
+                        {"active": false},
+                        {"active": false},
+                        {"active": false}]}'>
+                </include>
             </div>
         </div>
 
@@ -85,14 +84,36 @@
 
     <div class="homepage__stats">
         <div class="stat-item">
-            <figure class="stat-item__avatars">
-                <img src="../assets/images/avatar-1.png" alt="Customer">
-                <img src="../assets/images/avatar-2.png" alt="Customer">
-                <img src="../assets/images/avatar-3.png" alt="Customer">
-                <img src="../assets/images/avatar-4.png" alt="Customer">
-                <img src="../assets/images/avatar-5.png" alt="Customer">
-                <span class="stat-item__more"><span>+</span></span>
-            </figure>
+            <include
+                src="./components/image-list.html"
+                locals='{
+                    "figureClass": "stat-item__avatars",
+                    "showMore": true,
+                    "list": [
+                        {
+                            "image": "../assets/images/avatar-1.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-2.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-3.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-4.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-5.png",
+                            "alt": "Customer"
+                        }
+                    ]
+                }'
+            >
+            </include>
             <div class="stat-item__text">
                 <p>72k+ Happy</p>
                 <p>Customers</p>
@@ -111,20 +132,50 @@
 </div>
 <div class="brands-section">
     <figure class="spacer-section">
-      <img src="../assets/icons/spacer-circle.svg" class="spacer-circle" alt="Decorative circle">
+        <img src="../assets/icons/spacer-circle.svg" class="spacer-circle" alt="Decorative circle">
     </figure>
-  
+
     <div class="container">
-      <p class="brands-tagline">Trusted by 100+ Companies across the globe!</p>
-      <figure class="brands-logo-container">
-        <img src="../assets/icons/google.svg" alt="Google logo" class="brand-logo">
-        <img src="../assets/icons/amazon.svg" alt="Amazon logo" class="brand-logo">
-        <img src="../assets/icons/logitech.svg" alt="Logitech logo" class="brand-logo">
-        <img src="../assets/icons/spotify.svg" alt="Spotify logo" class="brand-logo">
-        <img src="../assets/icons/samsung.svg" alt="Samsung logo" class="brand-logo">
-        <img src="../assets/icons/netflix.svg" alt="Netflix logo" class="brand-logo">
-      </figure>
+        <p class="brands-tagline">Trusted by 100+ Companies across the globe!</p>
+        <include
+            src="./components/image-list.html"
+            locals='{
+                "figureClass": "brands-logo-container",
+                "showMore": false,
+                "list": [
+                    {
+                        "image": "../assets/icons/google.svg",
+                        "alt": "Google logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/amazon.svg",
+                        "alt": "Amazon logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/logitech.svg",
+                        "alt": "Logitech logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/spotify.svg",
+                        "alt": "Spotify logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/samsung.svg",
+                        "alt": "Samsung logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/netflix.svg",
+                        "alt": "Netflix logo",
+                        "className": "brand-logo"
+                    }
+                ]
+            }'
+        >
+        </include>
     </div>
-  </div>
-  
->>>>>>> Stashed changes
+</div>
