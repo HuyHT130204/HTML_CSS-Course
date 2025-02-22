@@ -1,5 +1,4 @@
 <!-- Homepage -->
-
 <div class="homepage">
     <img src="../assets/icons/homepage-bg.svg" class="homepage__bg" alt="Background decoration">
     
@@ -13,24 +12,26 @@
 
             <div class="image-slider">
                 <button class="slider-btn slider-btn--prev">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <figure>
+                        <img src="../assets/icons/prev.svg" alt="Prev">
+                    </figure>
                 </button>
                 <figure class="slider-content">
                     <!-- <img src="../assets/images/hotel1.png" alt="Property"> -->
                 </figure>
                 <button class="slider-btn slider-btn--next">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <figure>
+                        <img src="../assets/icons/next.svg" alt="Next">
+                    </figure>
                 </button>
-                <div class="slider-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+                <include
+                    src="./components/slider-dots.html" 
+                    locals='{
+                        "dots": [{"active": true},
+                        {"active": false},
+                        {"active": false},
+                        {"active": false}]}'>
+                </include>
             </div>
         </div>
 
@@ -83,15 +84,36 @@
 
     <div class="homepage__stats">
         <div class="stat-item">
-            <figure class="stat-item__avatars">
-                <!-- These commented images should be wrapped in figure when uncommented
-                <img src="/src/images/avatar-1.png" alt="Customer">
-                <img src="/src/images/avatar-2.png" alt="Customer">
-                <img src="/src/images/avatar-3.png" alt="Customer">
-                <img src="/src/images/avatar-4.png" alt="Customer">
-                <img src="/src/images/avatar-5.png" alt="Customer"> -->
-                <span class="stat-item__more"><span>+</span></span>
-            </figure>
+            <include
+                src="./components/image-list.html"
+                locals='{
+                    "figureClass": "stat-item__avatars",
+                    "showMore": true,
+                    "list": [
+                        {
+                            "image": "../assets/images/avatar-1.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-2.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-3.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-4.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-5.png",
+                            "alt": "Customer"
+                        }
+                    ]
+                }'
+            >
+            </include>
             <div class="stat-item__text">
                 <p>72k+ Happy</p>
                 <p>Customers</p>
@@ -107,7 +129,4 @@
             </div>
         </div>
     </div>
-</div>
-<div class="spacer-section">
-    <img src="../assets/icons/spacer-circle.svg" class="spacer-circle" alt="Decorative circle">
 </div>
