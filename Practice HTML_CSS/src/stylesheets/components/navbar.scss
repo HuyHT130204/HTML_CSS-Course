@@ -1,0 +1,216 @@
+@use "../abstracts/" as *;
+
+.navbar {
+    background-color: $background-light;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        max-width: 1350px;
+    }
+
+    &__left {
+        flex: 0 1 auto;
+        transform: translateX(-5%);
+
+        @media (max-width: 1350px) {
+            flex-basis: 25%;
+        }
+
+        @media (max-width: 992px) {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: $background-light;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    }
+
+    &__center {
+        flex: 0 1 auto;
+        margin: 0 40px;
+        text-align: center;
+        transform: translateX(-30%);
+
+        @media (max-width: 1350px) {
+            margin: 0 20px;
+        }
+
+        @media (max-width: 992px) {
+            margin: 0;
+            flex: 1;
+            display: flex;
+            justify-content: left;
+            transform: translateX(0);
+        }
+    }
+
+    &__right {
+        flex: 0 1 auto;
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+
+        @media (max-width: 1350px) {
+            flex-basis: 25%;
+            gap: 12px;
+        }
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    /* Updated to support new nav__list structure */
+    .nav__list {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+        margin: 0;
+        padding: 0;
+
+        @media (max-width: 1350px) {
+            gap: 20px;
+        }
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        li {
+            display: flex;
+        }
+
+        a.link {
+            text-decoration: none;
+            color: $dark-text;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 0;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+
+            figure {
+                margin: 0 0 0 5px;
+                display: flex;
+                align-items: center;
+            }
+
+            &.active {
+                color: $dark-text;
+                background-color: rgba(67, 97, 238, 0.3);
+                padding: 8px 16px;
+                border-radius: 30px;
+                transform: translateX(20%);
+            }
+        }
+    }
+
+    &__logo {
+        text-decoration: none;
+        color: $dark-text;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+
+        @media (max-width: 992px) {
+            font-size: 1.25rem;
+        }
+
+        /* Support for nav__list structure */
+        .nav__list & {
+            padding: 0;
+        }
+    }
+
+    &__login,
+    &__add-listing {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    &__login {
+        transform: translateX(10px);
+        @media (max-width: 1350px) {
+            font-size: 0.9rem;
+        }
+        .logo-container {
+            background-color: transparent;
+        }
+    }
+
+    &__addlisting {
+        background-color: $listing-bg;
+        color: $background-light !important;
+        padding-left: 4px !important;
+        font-size: 16px !important;
+        margin-top: 8px;
+        width: 169px;
+        height: 50px;
+        border-radius: 40px;
+        transition: background-color 0.3s ease;
+    }
+    
+}
+
+.logo-container {
+    width: 50px;
+    height: 50px;
+    background-color: $listing-bg;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: 992px) {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Added support for nav-toggle functionality */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    
+    @media (max-width: 992px) {
+        display: block;
+    }
+}
+
+/* Show mobile menu when checkbox is checked */
+#nav-toggle:checked ~ .navbar__left {
+    display: block;
+}
+
+#nav-toggle:checked ~ .navbar__right {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 200px); /* Adjust based on the height of your menu */
+    left: 0;
+    width: 100%;
+    background-color: $background-light;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

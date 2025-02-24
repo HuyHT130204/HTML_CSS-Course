@@ -1,0 +1,14 @@
+<ul class="nav__list">
+    <each loop="item in {{list}}">
+      <li>
+        <a href="javascript:void(0)" class="link {{item.className || ''}} {{item.active ? 'active' : ''}}">
+          <if condition="item.iconSrc">
+            <figure class="logo-container">
+              <img src="{{item.iconSrc}}" alt="{{item.iconAlt || ''}}">
+            </figure>
+          </if>
+          {{item.text}}
+        </a>
+      </li>
+    </each>
+  </ul>

@@ -1,0 +1,116 @@
+@use "../components/" as *;
+@use "../abstracts/" as *;
+
+// Hide checkbox
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    
+    @media (max-width: 992px) {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-70%);
+    }
+}
+
+.top-header {
+    background-color: $listing-bg;
+    color: $background-light;
+
+    @media (max-width: 992px) {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        max-width: 1350px;
+        margin: -5px 80px;
+    }
+
+    &__location {
+        ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            transform: translateX(-12%);
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            color: $background-light;
+            white-space: nowrap;
+        }
+
+        img {
+            width: 16px;
+            height: 16px;
+            transform: translateX(40%);
+        }
+
+        a {
+            color: $background-light;
+            text-decoration: none;
+            font-size: 0.83125rem;
+            font-weight: 400;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            @include outside-stroke($dark-text, 1px);
+        }
+    }
+
+    &__contact {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: nowrap; 
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        a {
+            text-decoration: none;
+            color: $background-light;
+            font-size: 0.83125rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+
+            &:hover {
+                color: $border-color;
+            }
+        }
+
+        img {
+            width: 16px;
+            height: 16px;
+            transform: translateX(40%);
+        }
+    }
+}
+
+// Mobile menu toggle functionality
+#nav-toggle:checked ~ .navbar__left {
+    display: block;
+}
