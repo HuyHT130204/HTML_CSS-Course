@@ -1,0 +1,11 @@
+<figure class="{{figureClass}}">
+    <each loop="item in {{list}}">
+        <img src="{{item.image}}" 
+             alt="{{item.alt}}" 
+             class="{{item.className || ''}}"
+        >
+    </each>
+    <if condition="showMore">
+        <span class="stat-item__more"><span>+</span></span>
+    </if>
+</figure>
