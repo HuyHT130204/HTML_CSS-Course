@@ -1,0 +1,94 @@
+<div class="listings-page">
+    <!-- Listings Header -->
+    <div class="listings-header">
+      <div class="listings-header__text">
+        <p class="listings-header__label">CHECKOUT OUR NEW</p>
+        <h2 class="listings-header__title">Latest Listed Properties</h2>
+        <p class="listings-header__description">Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.</p>
+      </div>
+      <include
+            src="./components/filters.html"
+            locals='{
+                "filters": [
+                    {"text": "All", "active": false},
+                    {"text": "Sell", "active": true}, 
+                    {"text": "Rent", "active": false}
+                ]
+            }'
+        >
+        </include>
+    </div>
+    
+    <!-- Listings -->
+    <div class="listings">
+      <include 
+        src="./components/generic.html"
+        locals='{
+          "listClass": "listings__container",
+          "itemClass": "listings__item",
+          "showImage": true,
+          "iconClass": "listings__image",
+          "badgeClass": "listings__badge",
+          "contentClass": "listings__content",
+          "preTitleClass": "listings__pretitle",
+          "titleClass": "listings__title",
+          "priceClass": "listings__price",
+          "descriptionClass": "listings__description",
+          "metaClass": "listings__meta",
+          "metaItemClass": "listings__meta-item",
+          "ctaClass": "listings__cta",
+          "footerClass": "listings__footer",
+          "list": [
+            {
+              "image": "../assets/images/listing1.png",
+              "alt": "Tranquil Haven in the Woods",
+              "badge": "Popular",
+              "extraClass": "listings__item--popular",
+              "price": "$ 5,970",
+              "title": "Tranquil Haven in the Woods",
+              "titleTag": "h3",
+              "description": "103 Wright CourtBurlen, WA 98168",
+              "meta": ["4 Beds", "3 Bath"]
+            },
+            {
+              "image": "../assets/images/listing2.png",
+              "alt": "Serene Retreat by the Lake",
+              "badge": "New Listing",
+              "extraClass": "listings__item--new",
+              "price": "$ 1,970",
+              "title": "Serene Retreat by the Lake",
+              "titleTag": "h3",
+              "description": "1964 Jehovah Drive, VA 22408",
+              "meta": ["3 Beds", "2 Bath"]
+            },
+            {
+              "image": "../assets/images/listing3.png",
+              "alt": "Charming Cottage in the Meadow",
+              "badge": "Discounted Price",
+              "extraClass": "listings__item--discount",
+              "price": "$ 3,450",
+              "title": "Charming Cottage in the Meadow",
+              "titleTag": "h3",
+              "description": "1508 Centennial Farm RoadHarlan, 51537",
+              "meta": ["4 Beds", "4 Bath"]
+            },
+            {
+              "image": "../assets/images/listing4.png",
+              "alt": "Grand Estate on the Hilltop",
+              "badge": "Popular",
+              "extraClass": "listings__item--popular",
+              "price": "$ 2,389",
+              "title": "Grand Estate on the Hilltop",
+              "titleTag": "h3",
+              "description": "103 Wright CourtBurlen, WA 98168",
+              "meta": ["4 Beds", "3 Bath"]
+            }
+          ]
+        }'
+      ></include>
+    </div>
+
+    <div class="view-more-container">
+        <a href="#" class="view-more-btn">View more properties</a>
+    </div>
+</div>
