@@ -1,0 +1,7 @@
+<div class="listings-header__filters">
+    <each loop="filter in {{filters}}">
+        <button class="listings-header__filter {{filter.active ? 'listings-header__filter--active' : ''}}">
+            {{filter.text}}
+        </button>
+    </each>
+</div>
