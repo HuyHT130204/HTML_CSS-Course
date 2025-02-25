@@ -113,23 +113,49 @@
     position: absolute;
     top: 17rem;
     left: 2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
+    padding-left: 2.5rem; // Extra space for icon
     border-radius: 2rem;
     font-size: 1rem;
     font-weight: 500;
     z-index: 1;
     width: auto;
-
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 1rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    
+    &--popular::before {
+      background-image: url('../assets/icons/fire.svg');
+    }
+    
+    &--new::before {
+      background-image: url('../assets/icons/home.svg');
+    }
+    
+    &--discount::before {
+      background-image: url('../assets/icons/money.svg');
+    }
+  
     .listings__item--popular & {
       background-color: $badge-bg1;
       color: $badge-text1;
     }
-
+  
     .listings__item--new & {
       background-color: $badge-bg2;
       color: $badge-text2;
     }
-
+  
     .listings__item--discount & {
       background-color: $badge-bg3;
       color: $badge-text3;
@@ -186,6 +212,17 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+      }
+      &:nth-child(1)::before {
+        background-image: url('../assets/icons/bed.svg');
+        width: 30px;
+        height: 21.5px;
+      }
+      
+      &:nth-child(2)::before {
+        background-image: url('../assets/icons/bath.svg');
+        width: 24px;
+        height: 24.06px;
       }
     }
   }
@@ -250,3 +287,32 @@
     width: 100%;
   }
 }
+
+.view-more {
+    &-container {
+      display: none; 
+      text-align: center;
+      margin: 2rem 0;
+
+      @media screen and (max-width: 767px) {
+        display: block;
+      }
+    }
+    
+    &-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border: 2px solid #6a3dc8;
+      border-radius: 2rem;
+      color: #6a3dc8;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: #6a3dc8;
+        color: white;
+      }
+    }
+  }
