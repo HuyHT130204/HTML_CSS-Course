@@ -13,6 +13,40 @@
 
         <!-- Image Section -->
         <div class="about__right">
+            <!-- Gallery Component -->
+                <figure class="gallery__main">
+                    <picture>
+                        <img src="../assets/images/house-exterior.png" alt="Modern House">
+                    </picture>
+                </figure>
+                <figure class="gallery__item">
+                    <picture>
+                        <img src="../assets/images/bedroom.png" alt="Bedroom">
+                    </picture>
+                </figure>
+                <figure class="gallery__item">
+                    <picture>
+                        <img src="../assets/images/living-room.png" alt="Living Room">
+                    </picture>
+                </figure>
+            <!-- EST 2022 Logo -->
+            <include
+                src="./components/generic.html"
+                locals='{
+                "listClass": "est-logo",
+                "itemClass": "logo",
+                "showImage": true,
+                "list": [
+                    {
+                        "image": "../assets/images/RES-2022.png",
+                        "alt": "EST 2022"
+                    }
+                ]
+                }'
+            >
+            </include>
+
+            <!-- Decorative Circle -->
             <include
                 src="./components/generic.html"
                 locals='{
