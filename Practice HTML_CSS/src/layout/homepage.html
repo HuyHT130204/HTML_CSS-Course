@@ -1,0 +1,180 @@
+<div class="homepage">
+    <img src="../assets/icons/homepage-bg.svg" class="homepage__bg" alt="Background decoration">
+    
+    <div class="homepage__content">
+        <div class="homepage__left">
+            <span class="homepage__label">REAL ESTATE</span>
+            <h1 class="homepage__title">Find a perfect<br>home you love..!</h1>
+            <p class="homepage__description">
+                Etiam eget elementum elit. Aenean dignissim dapibus vestibulum. Integer a dolor eu sapien sodales vulputate ac in purus.
+            </p>
+
+            <div class="image-slider">
+                <button class="slider-btn slider-btn--prev">
+                    <figure>
+                        <img src="../assets/icons/prev.svg" alt="Prev">
+                    </figure>
+                </button>
+                <figure class="slider-content">
+                    <img src="../assets/images/hotel1.png" alt="Property">
+                </figure>
+                <button class="slider-btn slider-btn--next">
+                    <figure>
+                        <img src="../assets/icons/next.svg" alt="Next">
+                    </figure>
+                </button>
+                <include
+                    src="./components/slider-dots.html" 
+                    locals='{
+                        "dots": [{"active": true},
+                        {"active": false},
+                        {"active": false},
+                        {"active": false}]}'>
+                </include>
+            </div>
+        </div>
+
+        <div class="homepage__right">
+            <div class="search-box">
+                <div class="search-tabs">
+                    <button class="search-tabs__btn active">For Sale</button>
+                    <button class="search-tabs__btn">For Rent</button>
+                </div>
+
+                <div class="search-form">
+                    <input type="text" placeholder="New York, San Francisco, etc" class="search-form__input">
+                    
+                    <div class="search-form__select">
+                        <select>
+                            <option value="" disabled selected>Select Property Type</option>
+                            <option value="house">House</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="condo">Condo</option>
+                        </select>
+                    </div>
+
+                    <div class="search-form__select">
+                        <select>
+                            <option value="" disabled selected>Select Rooms</option>
+                            <option value="1">1 Room</option>
+                            <option value="2">2 Rooms</option>
+                            <option value="3">3 Rooms</option>
+                            <option value="4">4+ Rooms</option>
+                        </select>
+                    </div>
+
+                    <a href="#" class="search-form__advanced">
+                        <figure>
+                            <img src="../assets/icons/advance.svg" alt="Advance">
+                        </figure>
+                        Advance Search
+                    </a>
+
+                    <button class="search-form__submit">
+                        <figure>
+                            <img src="../assets/icons/search.svg" alt="Search">
+                        </figure>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="homepage__stats">
+        <div class="stat-item">
+            <include
+                src="./components/image-list.html"
+                locals='{
+                    "figureClass": "stat-item__avatars",
+                    "showMore": true,
+                    "list": [
+                        {
+                            "image": "../assets/images/avatar-1.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-2.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-3.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-4.png",
+                            "alt": "Customer"
+                        },
+                        {
+                            "image": "../assets/images/avatar-5.png",
+                            "alt": "Customer"
+                        }
+                    ]
+                }'
+            >
+            </include>
+            <div class="stat-item__text">
+                <p>72k+ Happy</p>
+                <p>Customers</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <figure class="stat-item__listings">
+                <img src="../assets/images/listings.png" alt="Listings">
+            </figure>  
+            <div class="stat-item__text">
+                <p>200+ New</p>
+                <p>Listings Everyday!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="brands-section">
+    <figure class="spacer-section">
+        <img src="../assets/icons/spacer-circle.svg" class="spacer-circle" alt="Decorative circle">
+    </figure>
+
+    <div class="container">
+        <p class="brands-tagline">Trusted by 100+ Companies across the globe!</p>
+        <include
+            src="./components/image-list.html"
+            locals='{
+                "figureClass": "brands-logo-container",
+                "showMore": false,
+                "list": [
+                    {
+                        "image": "../assets/icons/google.svg",
+                        "alt": "Google logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/amazon.svg",
+                        "alt": "Amazon logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/logitech.svg",
+                        "alt": "Logitech logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/spotify.svg",
+                        "alt": "Spotify logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/samsung.svg",
+                        "alt": "Samsung logo",
+                        "className": "brand-logo"
+                    },
+                    {
+                        "image": "../assets/icons/netflix.svg",
+                        "alt": "Netflix logo",
+                        "className": "brand-logo"
+                    }
+                ]
+            }'
+        >
+        </include>
+    </div>
+</div>
