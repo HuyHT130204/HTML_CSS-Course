@@ -1,0 +1,98 @@
+<div class="about">
+    <div class="about__content">
+        <!-- Header Section -->
+        <div class="about__header">
+            <h4 class="about__subtitle">WHO ARE WE</h4>
+            <h2 class="about__title">Assisting individuals in locating the appropriate real estate.</h2>
+            <p class="about__description">
+                Donec porttitor euismod dignissim. Nullam a lacinia ipsum, 
+                nec dignissim purus. Nulla convallis ipsum molestie nibh 
+                malesuada, ac malesuada leo volutpat.
+            </p>
+        </div>
+
+        <!-- Image Section -->
+        <div class="about__right">
+            <!-- Gallery Component -->
+                <figure class="gallery__main">
+                    <picture>
+                        <img src="../assets/images/house-exterior.png" alt="Modern House">
+                    </picture>
+                </figure>
+                <figure class="gallery__item">
+                    <picture>
+                        <img src="../assets/images/bedroom.png" alt="Bedroom">
+                    </picture>
+                </figure>
+                <figure class="gallery__item">
+                    <picture>
+                        <img src="../assets/images/living-room.png" alt="Living Room">
+                    </picture>
+                </figure>
+            <!-- EST 2022 Logo -->
+            <include
+                src="./components/generic.html"
+                locals='{
+                "listClass": "est-logo",
+                "itemClass": "logo",
+                "showImage": true,
+                "list": [
+                    {
+                        "image": "../assets/images/RES-2022.png",
+                        "alt": "EST 2022"
+                    }
+                ]
+                }'
+            >
+            </include>
+
+            <!-- Decorative Circle -->
+            <include
+                src="./components/generic.html"
+                locals='{
+                "listClass": "decorative",
+                "itemClass": "decorative-circle",
+                "showImage": true,
+                "list": [
+                    {
+                        "image": "../assets/icons/about_deco.svg",
+                        "alt": "About decoration"
+                    }
+                ]
+                }'
+            >
+            </include>
+        </div>
+
+        <!-- Features Section -->
+        <div class="about__features">
+            <include
+                src="./components/generic.html"
+                locals='{
+                "listClass": "about__features",
+                "itemClass": "feature__item",
+                "iconClass": "feature__icon",
+                "contentClass": "feature__content",
+                "titleClass": "feature__title",
+                "descriptionClass": "feature__description",
+                "showImage": true,
+                "list": [
+                    {
+                    "image": "../assets/icons/house.svg",
+                    "alt": "House",
+                    "title": "Donec porttitor euismod",
+                    "description": "Nullam a lacinia ipsum, nec dignissim purus. Nulla"
+                    },
+                    {
+                    "image": "../assets/icons/human.svg",
+                    "alt": "Human",
+                    "title": "Donec porttitor euismod",
+                    "description": "Nullam a lacinia ipsum, nec dignissim purus. Nulla"
+                    }
+                ]
+                }'
+            >
+            </include>
+        </div>
+    </div>
+</div>
