@@ -1,0 +1,46 @@
+<div class="services">
+    <div class="services__container">
+      <!-- Header Section -->
+      <div class="services__header">
+        <h4 class="services__subtitle">OUR SERVICES</h4>
+        <h2 class="services__title">Donec porttitor euismod dignissim</h2>
+      </div>
+  
+      <!-- Services Cards -->
+      <div class="services__cards">
+        <include
+          src="./components/generic.html"
+          locals='{
+            "listClass": "services__list",
+            "itemClass": "service__item",
+            "iconClass": "service__icon",
+            "contentClass": "service__content",
+            "titleClass": "service__title",
+            "descriptionClass": "service__description",
+            "showImage": true,
+            "list": [
+              {
+                "image": "../assets/icons/search.svg",
+                "alt": "Magnifying glass",
+                "title": "Buy a New Home",
+                "description": "Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus."
+              },
+              {
+                "image": "../assets/icons/home.svg",
+                "alt": "Home",
+                "title": "Sell a House",
+                "description": "Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus."
+              },
+              {
+                "image": "../assets/icons/bed.svg",
+                "alt": "Bed",
+                "title": "Rent a House",
+                "description": "Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus."
+              }
+            ]
+          }'
+        >
+        </include>
+      </div>
+    </div>
+</div>
