@@ -39,11 +39,11 @@
       margin-bottom: 40px;
       width: 100%; // Đảm bảo list chiếm toàn bộ chiều rộng
       
-      @media (min-width: 769px){
+      @media screen and (min-width: $medium) {
         grid-template-columns: repeat(2, 1fr);
       }
       
-      @include respond-to('large') {
+      @media screen and (min-width: 992px) {
         grid-template-columns: repeat(3, 1fr);
       }
     }
@@ -69,7 +69,6 @@
   
     &__action {
       display: none;
-
     }
   
     &__button {
@@ -193,7 +192,8 @@
         font-size: 20px;
       }
     }
-    @include respond-to('medium') {
+    
+    @media screen and (min-width: $medium) {
       &__image {
         height: 220px;
       }
@@ -202,17 +202,16 @@
         font-size: 20px;
       }
     }
-
   }
   
   // Responsive adjustments
-  @media (max-width: 992px) {
+  @include tablet {
     .blogs {
-      &__action{
+      &__action {
         display: flex;
         justify-content: center;
       }
-      .slider-dots{
+      .slider-dots {
         display: none;
       }
     }
@@ -225,7 +224,8 @@
       }
     }
   }
-  @media (max-width: 768px) {
+  
+  @include mobile {
     .blogs {
       padding: 60px 0;
       
@@ -269,7 +269,7 @@
     }
   }
   
-@media (max-width: 576px) {
+  @media screen and (max-width: 576px) {
     .blogs {
       padding: 50px 0;
       
@@ -288,7 +288,7 @@
       &__list {
         gap: 20px;
       }
-      &__action{
+      &__action {
         justify-content: left;
         margin-left: 12px;
       }
