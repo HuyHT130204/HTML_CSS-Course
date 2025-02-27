@@ -21,14 +21,22 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-@mixin respond-to($breakpoint) {
-    @if $breakpoint == 'small' {
-      @media (min-width: 479px) { @content; }
-    } @else if $breakpoint == 'medium' {
-      @media (min-width: 768px) { @content; }
-    } @else if $breakpoint == 'large' {
-      @media (min-width: 992px) { @content; }
-    } @else if $breakpoint == 'xlarge' {
-      @media (min-width: 1200px) { @content; }
-    }
+// Media-Query Mixin
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+// Có thể bổ sung thêm desktop và các thiết bị khác
+@mixin desktop {
+  @media screen and (min-width: $extra-large) {
+    @content;
+  }
 }
