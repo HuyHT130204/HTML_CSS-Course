@@ -29,23 +29,8 @@
             </if>
         
             <if condition="item.title">
-                <if condition="item.titleTag == 'h1'">
-                <h1 class="{{titleClass}}">{{item.title}}</h1>
-                </if>
-                <if condition="item.titleTag == 'h2'">
-                <h2 class="{{titleClass}}">{{item.title}}</h2>
-                </if>
                 <if condition="item.titleTag == 'h3' || !item.titleTag">
                 <h3 class="{{titleClass}}">{{item.title}}</h3>
-                </if>
-                <if condition="item.titleTag == 'h4'">
-                <h4 class="{{titleClass}}">{{item.title}}</h4>
-                </if>
-                <if condition="item.titleTag == 'h5'">
-                <h5 class="{{titleClass}}">{{item.title}}</h5>
-                </if>
-                <if condition="item.titleTag == 'h6'">
-                <h6 class="{{titleClass}}">{{item.title}}</h6>
                 </if>
             </if>
         
