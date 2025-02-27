@@ -345,12 +345,15 @@
         display: flex;
         align-items: center;
 
+        figure {
+            margin-left: -12px;
+            margin-top: 5px;
+        }
         img {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             border: 2px solid $background-light;
-            margin-left: -12px;
 
             &:first-child {
                 margin-left: 0;
