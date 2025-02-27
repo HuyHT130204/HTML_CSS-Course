@@ -104,7 +104,11 @@
 
     img {
       width: 100%;
+<<<<<<< HEAD
       height: 340px;
+=======
+      height: 100%;
+>>>>>>> c974d8c871230e0b6a1668308122ab2cd05b95b7
       object-fit: cover;
     }
   }
@@ -113,13 +117,18 @@
     position: absolute;
     top: 17rem;
     left: 2rem;
+<<<<<<< HEAD
     padding: 0.6rem 1.2rem;
     padding-left: 2.5rem; // Extra space for icon
+=======
+    padding: 0.5rem 1rem;
+>>>>>>> c974d8c871230e0b6a1668308122ab2cd05b95b7
     border-radius: 2rem;
     font-size: 1rem;
     font-weight: 500;
     z-index: 1;
     width: auto;
+<<<<<<< HEAD
     
     &::before {
       content: '';
@@ -146,16 +155,27 @@
       background-image: url('../assets/icons/money.svg');
     }
   
+=======
+
+>>>>>>> c974d8c871230e0b6a1668308122ab2cd05b95b7
     .listings__item--popular & {
       background-color: $badge-bg1;
       color: $badge-text1;
     }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> c974d8c871230e0b6a1668308122ab2cd05b95b7
     .listings__item--new & {
       background-color: $badge-bg2;
       color: $badge-text2;
     }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> c974d8c871230e0b6a1668308122ab2cd05b95b7
     .listings__item--discount & {
       background-color: $badge-bg3;
       color: $badge-text3;
@@ -213,6 +233,7 @@
         background-repeat: no-repeat;
         background-size: contain;
       }
+<<<<<<< HEAD
       &:nth-child(1)::before {
         background-image: url('../assets/icons/bed.svg');
         width: 30px;
@@ -224,6 +245,8 @@
         width: 24px;
         height: 24.06px;
       }
+=======
+>>>>>>> c974d8c871230e0b6a1668308122ab2cd05b95b7
     }
   }
 }
@@ -287,6 +310,7 @@
     width: 100%;
   }
 }
+<<<<<<< HEAD
 
 .view-more {
     &-container {
@@ -316,3 +340,5 @@
       }
     }
   }
+=======
+>>>>>>> c974d8c871230e0b6a1668308122ab2cd05b95b7
