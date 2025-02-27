@@ -1,0 +1,252 @@
+@use "../abstracts/" as *;
+
+.listings-page {
+    max-width: 1230px;
+    margin: 160px auto;
+    padding: 0 2rem;
+}
+
+// Listings Header
+.listings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+
+  &__text {
+    max-width: 600px;
+  }
+
+  &__label {
+    font-size: clamp(0.5rem, 5vw, 1.3rem);
+    font-weight: 500;
+    color: $primary-color;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem 0;
+    color: $dark-text;
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: $gray-text;
+    line-height: 1.5;
+    max-width: 80%;
+  }
+
+  &__filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    align-items: center;
+    transform: translateY(50px);
+  }
+
+  &__filter {
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid $listing-bg;
+    background-color: transparent;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: $listing-bg;
+
+    &--active {
+      background-color: $listing-bg;
+      border-color: $listing-bg;
+      color: $background-light;
+    }
+  }
+}
+
+// Listings
+.listings {
+  padding: 1rem 0;
+  overflow: visible;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    gap: 3.125rem;
+    flex-wrap: nowrap; // Always nowrap for desktop
+    width: auto; // Allow natural width
+  }
+
+  &__item {
+    flex: 0 0 340px;
+    width: 340px;
+    position: relative;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__image {
+    width: 340px;
+    height: 340px;
+    border-radius: 1.75rem;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 17rem;
+    left: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 1;
+    width: auto;
+
+    .listings__item--popular & {
+      background-color: $badge-bg1;
+      color: $badge-text1;
+    }
+
+    .listings__item--new & {
+      background-color: $badge-bg2;
+      color: $badge-text2;
+    }
+
+    .listings__item--discount & {
+      background-color: $badge-bg3;
+      color: $badge-text3;
+    }
+  }
+
+  &__content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 19.4px;
+    font-weight: 600;
+    color: $dark-text;
+    line-height: 1.3;
+    order: 2; // Move title after price
+  }
+
+  &__price {
+    font-size: 27.6px;
+    font-weight: 700;
+    margin: 0 0 0.2rem 0;
+    color: $dark-text;
+    order: 1; // Move price before title
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: $gray-text;
+    margin-bottom: 0.75rem;
+    order: 3; // Keep description after title
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    order: 4; // Keep meta at the bottom
+
+    &-item {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      color: $dark-text;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.5rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 1200px) {
+  .listings__container {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .listings__item {
+    flex: 0 0 calc((100% - 3rem) / 3); // 3 items per row
+    width: calc((100% - 3rem) / 3);
+    
+    .listings__image {
+      width: 100%;
+      height: 340px; // Maintain height while width adjusts
+    }
+  }
+}
+
+@media (max-width: 992px) {
+    .listings__item {
+        flex: 0 0 calc((100% - 1.5rem) / 2); // 2 items per row
+        width: calc((100% - 1.5rem) / 2);
+    }
+    .listings-header {
+        &__filters {
+            display: flex;
+            gap: 2rem;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(0px);
+            margin-top: 20px;
+        }
+        &__filter {
+            width: 80px;
+            height: 49px;
+        }
+      }
+}
+
+@media (max-width: 768px) {
+  .listings-header {
+    flex-direction: column;
+    align-items: stretch;
+    &__description {
+        max-width: 90%;
+      }
+
+    &__filters {
+      width: 100%;
+      justify-content: center !important;
+    }
+  }
+
+  .listings__item {
+    flex: 0 0 100%; // 1 item per row
+    width: 100%;
+  }
+}
