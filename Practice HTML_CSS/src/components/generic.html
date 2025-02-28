@@ -18,7 +18,17 @@
   
         <!-- Badge -->
         <if condition="item.badge">
-          <span class="{{badgeClass}}">{{item.badge}}</span>
+          <span class="{{badgeClass}} {{badgeClass}}--{{item.extraClass.split('--')[1]}}">
+            <!-- For badges with number/day format -->
+            <if condition="item.badge.includes(' ')">
+              <span class="{{badgeClass}}__number">{{item.badge.split(' ')[0]}}</span>
+              <span class="{{badgeClass}}__day">{{item.badge.split(' ')[1]}}</span>
+            </if>
+            <!-- For simple badges -->
+            <if condition="!item.badge.includes(' ')">
+              {{item.badge}}
+            </if>
+          </span>
         </if>
   
         <!-- Content Section -->
@@ -50,8 +60,8 @@
                 </div>
             </if>
         
-            <if condition="item.cta">
-                <a href="{{item.ctaLink}}" class="{{ctaClass}}">{{item.ctaText}}</a>
+            <if condition="item.ctaLink">
+              <a href="{{item.ctaLink}}" class="{{ctaClass}}">{{item.ctaText}}</a>
             </if>
             </div>
         </if>
