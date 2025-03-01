@@ -1,0 +1,42 @@
+@use "variables" as *;
+@mixin outside-stroke($stroke-color, $shadow-size) {
+    text-shadow: 
+        $shadow-size $shadow-size 0 $stroke-color, 
+        (-$shadow-size) (-$shadow-size) 0 $stroke-color, 
+        (-$shadow-size) $shadow-size 0 $stroke-color, 
+        $shadow-size (-$shadow-size) 0 $stroke-color,
+        0 $shadow-size 0 $stroke-color, 
+        0 (-$shadow-size) 0 $stroke-color, 
+        $shadow-size 0 0 $stroke-color, 
+        (-$shadow-size) 0 0 $stroke-color;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+@mixin card-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+// Media-Query Mixin
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+// Có thể bổ sung thêm desktop và các thiết bị khác
+@mixin desktop {
+  @media screen and (min-width: $extra-large) {
+    @content;
+  }
+}

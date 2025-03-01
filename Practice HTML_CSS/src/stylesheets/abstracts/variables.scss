@@ -9,3 +9,17 @@ $menu-hover: rgba(67, 97, 238, 0.3);
 $color-btn: #3A0CA3;
 $input-bg: #d4d4d42e;
 $input-text: #AAAAAA;
+$badge-bg1: #FFE1E1;
+$badge-text1: #FF1111;
+$badge-bg2: #D7EEFF;
+$badge-text2: #119BFF;
+$badge-bg3: #F1FFF1;
+$badge-text3: #00CE3A;
+$services-bg: rgba(212, 212, 212, 0.300);
+$des-blog: #D4D4D4;
+
+// Breakpoints
+$medium: 768px;
+$extra-large: 1200px;
+$mobile: calc($medium - 1px);
+$tablet: calc($extra-large - 1px);
