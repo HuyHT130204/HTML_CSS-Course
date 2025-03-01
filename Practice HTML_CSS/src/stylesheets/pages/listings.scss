@@ -140,7 +140,7 @@
 
   &__image {
     width: 340px;
-    height: 340px;
+    height: 340px;// Set the height for the image wrapper
     border-radius: 1.75rem;
     overflow: hidden;
     position: relative;
@@ -148,13 +148,12 @@
 
     img {
       width: 100%;
-      height: 340px;
+      height: 340px;// Maintain height while width adjusts
       object-fit: cover;
     }
     
     @include tablet {
       width: 100%;
-      height: 340px; // Maintain height while width adjusts
     }
   }
 
