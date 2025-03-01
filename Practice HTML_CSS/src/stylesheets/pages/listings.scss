@@ -40,6 +40,10 @@
     color: $gray-text;
     line-height: 1.5;
     max-width: 80%;
+    
+    @include tablet {
+      max-width: 90%;
+    }
   }
 
   &__filters {
@@ -48,6 +52,21 @@
     flex-shrink: 0;
     align-items: center;
     transform: translateY(50px);
+    
+    @include tablet {
+      display: flex;
+      gap: 2rem;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(0px);
+      margin-top: 20px;
+    }
+    
+    @include mobile {
+      width: 100%;
+      justify-content: center !important;
+    }
   }
 
   &__filter {
@@ -60,12 +79,22 @@
     cursor: pointer;
     transition: all 0.2s ease;
     color: $listing-bg;
+    
+    @include tablet {
+      width: 80px;
+      height: 49px;
+    }
 
     &--active {
       background-color: $listing-bg;
       border-color: $listing-bg;
       color: $background-light;
     }
+  }
+  
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
@@ -80,6 +109,11 @@
     gap: 3.125rem;
     flex-wrap: nowrap; // Always nowrap for desktop
     width: auto; // Allow natural width
+    
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
   }
 
   &__item {
@@ -91,6 +125,16 @@
 
     &:hover {
       transform: translateY(-5px);
+    }
+    
+    @include tablet {
+      flex: 0 0 calc((100% - 1.5rem) / 2); // 2 items per row
+      width: calc((100% - 1.5rem) / 2);
+    }
+    
+    @include mobile {
+      flex: 0 0 100%; // 1 item per row
+      width: 100%;
     }
   }
 
@@ -104,8 +148,13 @@
 
     img {
       width: 100%;
-      height: 100%;
+      height: 340px;
       object-fit: cover;
+    }
+    
+    @include tablet {
+      width: 100%;
+      height: 340px; // Maintain height while width adjusts
     }
   }
 
@@ -228,73 +277,13 @@
   }
 }
 
-// Responsive styles
-@media (max-width: 1200px) {
-  .listings__container {
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .listings__item {
-    flex: 0 0 calc((100% - 3rem) / 3); // 3 items per row
-    width: calc((100% - 3rem) / 3);
-    
-    .listings__image {
-      width: 100%;
-      height: 340px; // Maintain height while width adjusts
-    }
-  }
-}
-
-@media (max-width: 992px) {
-    .listings__item {
-        flex: 0 0 calc((100% - 1.5rem) / 2); // 2 items per row
-        width: calc((100% - 1.5rem) / 2);
-    }
-    .listings-header {
-        &__filters {
-            display: flex;
-            gap: 2rem;
-            flex-shrink: 0;
-            align-items: center;
-            justify-content: center;
-            transform: translateY(0px);
-            margin-top: 20px;
-        }
-        &__filter {
-            width: 80px;
-            height: 49px;
-        }
-      }
-}
-
-@media (max-width: 768px) {
-  .listings-header {
-    flex-direction: column;
-    align-items: stretch;
-    &__description {
-        max-width: 90%;
-      }
-
-    &__filters {
-      width: 100%;
-      justify-content: center !important;
-    }
-  }
-
-  .listings__item {
-    flex: 0 0 100%; // 1 item per row
-    width: 100%;
-  }
-}
-
 .view-more {
     &-container {
       display: none; 
       text-align: center;
       margin: 2rem 0;
 
-      @media screen and (max-width: 767px) {
+      @include tablet {
         display: block;
       }
     }
@@ -315,4 +304,4 @@
         color: $background-light;
       }
     }
-  }
+}
