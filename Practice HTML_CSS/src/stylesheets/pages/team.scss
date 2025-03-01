@@ -11,35 +11,37 @@
 
   &__header {
     text-align: center;
-    margin-bottom: 75px !important;
+    margin-bottom: 75px;
     
-    @media screen and (min-width: $medium) {
+    @include mobile {
+      margin-bottom: 40px;
+    }
+    
+    @include tablet {
       margin-bottom: 50px;
     }
   }
 
   &__subtitle {
     color: $primary-color;
-    font-size: 16px;
+    font-size: 19.4px;
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 0px !important;
     
-    @media screen and (min-width: $medium) {
-      margin-bottom: 16px;
-      font-size: 19.4px;
+    @include mobile {
+      font-size: 16px;
     }
   }
 
   &__title {
     color: $dark-text;
-    font-size: 27.6px;
+    font-size: 39.8px;
     font-weight: 600;
     margin: 0;
     
-    @media screen and (min-width: $medium) {
-      font-size: 39.8px;
+    @include tablet {
+      font-size: 27.6px;
     }
   }
 
@@ -48,11 +50,16 @@
     grid-template-columns: 1fr;
     gap: 20px;
     
-    @media screen and (min-width: 479px) {
+    @include mobile {
+      gap: 15px;
+    }
+    
+    @include tablet {
+      gap: 20px;
       grid-template-columns: repeat(2, 1fr);
     }
     
-    @media screen and (min-width: 992px) {
+    @include desktop {
       grid-template-columns: repeat(4, 1fr);
     }
   }
@@ -67,6 +74,10 @@
     text-align: center;
     transition: transform 0.3s ease;
     
+    @include mobile {
+      margin-bottom: 15px;
+    }
+    
     &:hover {
       transform: translateY(-10px);
     }
@@ -74,18 +85,10 @@
 
   &__photo {
     width: 200px;
-    height: 220px;
+    height: 280px;
     margin: 0;
     overflow: hidden;
     border-radius: 20px;
-    
-    @media screen and (min-width: 479px) {
-      height: 280px;
-    }
-    
-    @media screen and (min-width: 992px) {
-      height: 280px;
-    }
     
     img {
       width: 100%;
@@ -102,58 +105,35 @@
   &__content {
     padding: 16px 12px;
     
-    @media screen and (min-width: $medium) {
+    @include tablet {
       padding: 20px 15px;
     }
   }
 
   &__name {
     color: $dark-text;
-    font-size: 16px;
+    font-size: 27.6px;
     font-weight: 700;
     margin: 0 0 6px;
     
-    @media screen and (min-width: $medium) {
-      font-size: 27.6px;
+    @include mobile {
+      font-size: 16px;
       margin: 0 0 8px;
     }
   }
 
   &__role {
     color: $primary-color;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
     margin: 0;
     
-    @media screen and (min-width: $medium) {
-      font-size: 16px;
+    @include mobile {
+      font-size: 13px;
     }
   }
-}
-
-// Thêm responsive styles với mixin mới
-@include mobile {
-  .team {
+  
+  @include mobile {
     padding: 50px 0;
-    
-    &__header {
-      margin-bottom: 40px !important;
-    }
-    
-    &__members {
-      gap: 15px;
-    }
-    
-    &__member {
-      margin-bottom: 15px;
-    }
-  }
-}
-
-@include tablet {
-  .team {
-    &__members {
-      gap: 20px;
-    }
   }
 }
