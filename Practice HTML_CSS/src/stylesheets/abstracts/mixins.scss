@@ -20,3 +20,23 @@
 @mixin card-shadow {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+
+// Media-Query Mixin
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+// Có thể bổ sung thêm desktop và các thiết bị khác
+@mixin desktop {
+  @media screen and (min-width: $extra-large) {
+    @content;
+  }
+}
