@@ -1,0 +1,73 @@
+<!-- blogs.html -->
+<section class="blogs">
+    <div class="blogs__container">
+      <div class="blogs__header">
+        <h4 class="blogs__subtitle">WHAT'S TRENDING</h4>
+        <h2 class="blogs__title">Latest Blogs & Posts</h2>
+      </div>
+  
+      <include
+        src="./components/generic.html"
+        locals='{
+          "listClass": "blogs__list",
+          "itemClass": "blog-card",
+          "iconClass": "blog-card__image",
+          "contentClass": "blog-card__content",
+          "titleClass": "blog-card__title",
+          "descriptionClass": "blog-card__description",
+          "badgeClass": "blog-card__date",
+          "ctaClass": "blog-card__cta",
+          "showImage": true,
+          "list": [
+            {
+              "image": "../assets/images/blog-home-buying.png",
+              "alt": "People meeting around a table",
+              "title": "Top 10 Home Buying Mistakes to Avoid",
+              "description": "Etiam eget elementum elit. Aenean dignissim dapibus vestibulum.",
+              "badge": "28 Tue",
+              "extraClass": "blog-card--1",
+              "ctaText": "",
+              "ctaLink": "#"
+            },
+            {
+              "image": "../assets/images/blog-stage-home.png",
+              "alt": "Aerial view of houses",
+              "title": "How to Stage Your Home for a Quick Sale",
+              "description": "Nullam odio lacus, dictum quis pretium congue, vehicula venenatis nunc.",
+              "badge": "08 Mon",
+              "extraClass": "blog-card--2",
+              "ctaText": "",
+              "ctaLink": "#"
+            },
+            {
+              "image": "../assets/images/blog-first-time-sellers.png",
+              "alt": "People looking at laptop",
+              "title": "5 Tips for First-Time Home Sellers",
+              "description": "In hac habitasse platea dictumst. Phasellus vel velit vel augue maximus.",
+              "badge": "26 Wed",
+              "extraClass": "blog-card--3",
+              "ctaText": "",
+              "ctaLink": "#"
+            }
+          ]
+        }'
+      >
+      </include>
+  
+      <include
+        src="./components/slider-dots.html"
+        locals='{
+            "dots": [
+            {"active": true},
+            {"active": false},
+            {"active": false}
+            ]
+        }'
+       >
+       </include>
+  
+      <div class="blogs__action">
+        <a href="#" class="blogs__button">View more blogs</a>
+      </div>
+    </div>
+</section>
