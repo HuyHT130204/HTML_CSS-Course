@@ -27,26 +27,57 @@
         justify-content: space-between;
         position: relative;
         z-index: 1;
+        height: 100%;
+
+        @include tablet {
+            padding: 0 32px;
+            gap: 40px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            gap: 60px;
+            padding: 0 20px;
+        }
     }
 
     &__left {
         flex: 1;
         max-width: 650px;
+
+        @include mobile {
+            max-width: 100%;
+        }
     }
 
     &__right {
         width: 420px;
         min-width: 320px;
+
+        @include mobile {
+            width: 100%;
+            max-width: 420px;
+        }
     }
 
     &__label {
         color: $primary-color;
-        font-size: 19.4px;
+        font-size: 19.4px; //Change to match with design
         font-weight: 500;
         letter-spacing: 0.7px;
         text-transform: uppercase;
         margin-bottom: 16px;
         display: block;
+        
+        @include tablet {
+            font-size: 18px;
+        }
+        
+        @include mobile {
+            font-size: 16px;
+        }
     }
 
     &__title {
@@ -55,6 +86,14 @@
         font-weight: 600;
         color: $dark-text;
         margin-bottom: 14px;
+
+        @include tablet {
+            font-size: 36px;
+        }
+
+        @include mobile {
+            font-size: 32px;
+        }
     }
 
     &__description {
@@ -62,6 +101,14 @@
         font-size: 16px;
         line-height: 1.6;
         max-width: 550px;
+
+        @include mobile {
+            text-align: left;
+        }
+    }
+
+    @include tablet {
+        padding: 40px 0;
     }
 }
 
@@ -73,12 +120,20 @@
     width: 420px;
     height: 582px;
     box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.05);
+
+    @include mobile {
+        padding: 24px;
+    }
 }
 
 .search-tabs {
     display: flex;
     margin-bottom: 32px;
     border-bottom: 3px solid $background-light;
+
+    @include mobile {
+        gap: 20px;
+    }
 
     &__btn {
         flex: 1;
@@ -230,6 +285,15 @@
     margin-left: -30px;
     max-width: 610px;
     
+    @include tablet {
+        margin-left: 0;
+        max-width: 580px;
+    }
+    
+    @include mobile {
+        border-radius: 20px;
+    }
+    
     .slider-content {
         position: relative;
         width: 100%;
@@ -240,6 +304,10 @@
             height: auto;
             display: block;
             border-radius: 40px;
+
+            @include mobile {
+                border-radius: 20px;
+            }
         }
     }
 
@@ -276,6 +344,16 @@
             stroke: $dark-text;
             color: $gray-text;
         }
+
+        @include mobile {
+            width: 32px;
+            height: 32px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
     }
 
     .slider-dots {
@@ -286,6 +364,14 @@
         display: flex;
         gap: 8px;
         z-index: 2;
+
+        @include tablet {
+            bottom: 10px;
+        }
+
+        @include mobile {
+            bottom: 5px;
+        }
 
         .dot {
             width: 10vw;
@@ -304,6 +390,14 @@
                 max-width: 100px;
                 min-width: 40px;
             }
+
+            @include tablet {
+                width: 50px;
+            }
+
+            @include mobile {
+                width: 30px;
+            }
         }
     }
 }
@@ -317,21 +411,24 @@
     gap: 48px;
     position: relative;
     z-index: 1;
-    justify-content: center; // Thêm justify-content center
+    justify-content: center;
 
-    
+    @include tablet {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 12rem 16px 0;
+        background-size: contain;
+        width: 100%;
+        max-width: 100%;
+    }
 }
-.homepage__content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    gap: 80px;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1;
-    height: 100%;
-}
+
 .stat-item {
     background: $background-light;
     border-radius: 50px;
@@ -341,16 +438,27 @@
     gap: 16px;
     @include card-shadow;
 
+    @include mobile {
+        font-size: 14px;
+        text-align: left;
+        width: 100%;
+        max-width: 330px;
+        padding: 12px 16px;
+    }
+
     &__avatars {
         display: flex;
         align-items: center;
 
+        figure {
+            margin-left: -12px;
+            margin-top: 5px;
+        }
         img {
-            width: 36px;
-            height: 36px;
+            width: 100%;
+            height: auto;
             border-radius: 50%;
             border: 2px solid $background-light;
-            margin-left: -12px;
 
             &:first-child {
                 margin-left: 0;
@@ -392,8 +500,6 @@
         }
     }
     
-    
-
     &__listings {
         width: 52px;
         height: 52px;
@@ -425,131 +531,68 @@
     }
 }
 
-// Responsive styles
-@media (max-width: 1200px) {
-    .homepage__content {
-        padding: 0 32px;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 991px) {
-    .homepage {
-        padding: 40px 0;
-        
-        &__content {
-            flex-direction: column;
-            align-items: center;
-            text-align: left;
-            gap: 60px;
-        }
-        .image-slider {
-            margin-left: 0;
-            max-width: 580px; 
-        }
-        &__left {
-            max-width: 100%;
-        }
-
-        &__description {
-            text-align: left;
-        }
-
-        &__right {
-            width: 100%;
-            max-width: 420px;
-        }
-    }
-
-    .homepage__stats {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .homepage {
-        &__title {
-            font-size: 36px;
-        }
-    }
-
-    .image-slider {
-        border-radius: 20px;
-
-        .slider-content img {
-            border-radius: 20px;
-        }
-        .slider-dots {
-            bottom: 10px;
-            .dot {
-                width: 50px;
-            }
-        }
-        .slider-btn {
-            width: 32px;
-            height: 32px;
-
-            svg {
-                width: 20px;
-                height: 20px;
-            }
-        }
-    }
-
-    .homepage__stats {
-        flex-direction: column;
-        gap: 24px;
-        padding: 15rem 24px 0; 
-        background: url("/src/assets/icons/brand.svg") no-repeat center top;
-        background-size: auto;
-    }
-      
-
-    .stat-item {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .homepage {
-        &__content {
-            padding: 0 20px;
-        }
-
-        &__title {
-            font-size: 32px;
-        }
-    }
-    .slider-dots {
-        bottom: 5px;
-        .dot {
-            width: 30px;
-        }
-    }
-    .search-box {
-        padding: 24px;
-    }
-
-    .search-tabs {
-        gap: 20px;
-    }
-
-    .stat-item {
-        padding: 12px 16px;
-    }
-}
-
-.spacer-section {
+.brands-section {
     position: relative;
-    width: 100%;
-    height: 200px;
-    margin-bottom: 60px;
-}
+    transform: translateY(-100%);
+    
+    .spacer-circle {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-130%);
+      z-index: 1;
+    }
+    
+    .container {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 60px;
+      z-index: 2;
+      
+      .brands-tagline {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 18px;
+        color: $gray-text;
+        font-weight: 500;
+      }
+      
+      .brands-logo-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 20px;
+        
+        .brand-logo {
+          height: 36.23px;
+          width: 120px;
+          filter: grayscale(120%);
+          opacity: 0.7;
+          transition: all 0.3s ease;
+          flex-shrink: 0;
+          
+          &:hover {
+            filter: grayscale(0);
+            opacity: 1;
+          }
+        }
+      }
 
-.spacer-circle {
-    position: absolute;
-    left: 15%;
-    top: -200px;
-    transform: none;
+      @include tablet {
+        margin: 0 20px;
+        padding: 30px 20px;
+      }
+
+      @include mobile {
+        transform: translateY(-120%);
+      }
+    }
+
+    @include tablet {
+      .spacer-circle {
+        display: none;
+      }
+    }
 }
