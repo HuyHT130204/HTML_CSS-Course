@@ -1,0 +1,195 @@
+@use "../abstracts/" as *;
+
+.services {
+  padding: 5rem 2rem !important;
+  background-color: $services-bg !important;
+  transform: translateY(-35px);
+  border-top: 1px solid $services-bg;
+  border-bottom: 1px solid $services-bg;
+
+  @media screen and (min-width: $medium) {
+    padding: 6rem 2rem;
+  }
+
+  &__container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    
+    @include mobile {
+      text-align: center;
+      padding: 0 1rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 19.4px;
+    font-weight: 600;
+    color: $dark-text;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $dark-text;
+    
+    @media screen and (min-width: $medium) {
+      font-size: 2.25rem;
+    }
+    
+    @include mobile {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+}
+
+.service {
+  &__item {
+    background-color: $background-light;
+    border-radius: 2.5rem;
+    padding: 2.5rem 1.5rem;
+    width: 340px;
+    height: 363px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+    
+    @include mobile {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      min-height: 300px;
+      border-radius: 1rem;
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  &__icon {
+    width: 5.625rem;
+    height: 5.625rem;
+    background-color: $primary-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    
+    @include mobile {
+      width: 4.5rem;
+      height: 4.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+      object-fit: contain;
+      filter: brightness(0) invert(1); // Make icon white
+      
+      @include mobile {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $dark-text;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: $gray-text;
+    line-height: 1.5;
+    margin: 0 auto;
+    
+    @media screen and (min-width: $medium) {
+      max-width: 75%;
+    }
+  }
+}
+
+// Mobile styles
+@include mobile {
+  .services {
+    padding: 2rem 1rem !important;
+    transform: translateY(0);
+    
+    &__cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
+
+// Ensure no layout issues on medium screens
+@media screen and (min-width: $medium) and (max-width: $tablet) {
+  .services {
+    &__list {
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    
+    .service__item {
+      width: 300px;
+      height: 340px;
+    }
+  }
+
+  .service {
+    &__icon {
+        width: 30%;
+    }
+  }
+}
+
+// Extra small screens
+@media screen and (max-width: calc($medium / 1.6)) {
+  .service__item {
+    padding: 1.5rem 1rem;
+    min-height: 280px;
+  }
+  
+  .service__icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .service__description {
+    font-size: 0.9rem;
+  }
+}
