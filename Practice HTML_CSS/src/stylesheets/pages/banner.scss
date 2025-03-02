@@ -3,14 +3,22 @@
 .agent-banner {
     width: 75%; 
     max-width: 1200px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 6rem auto;
     position: relative;
     height: 260px;
+
+    @include tablet {
+      height: auto;
+      width: 85%;
+      margin-top: 50px;
+      margin-bottom: 8rem; // Added more bottom margin for tablets specifically
+    }
     
     @include mobile {
       height: auto;
       width: 85%;
       margin-top: 50px;
+      margin-bottom: 4rem;
     }
     
     &__container {
@@ -232,13 +240,11 @@
 
         @include tablet {
           height: auto;
-          width: 80%;
           transform: translateY(40px);
         }
 
         @include mobile {
           height: auto;
-          width: 90%;
           transform: translateY(0px);
         }
       }
