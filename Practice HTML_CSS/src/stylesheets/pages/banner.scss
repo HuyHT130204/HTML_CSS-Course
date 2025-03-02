@@ -240,13 +240,10 @@
 
         @include tablet {
           height: auto;
-          width: 80%;
           transform: translateY(40px);
         }
 
         @include mobile {
-          height: auto;
-          width: 90%;
           transform: translateY(0px);
         }
       }
