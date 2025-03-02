@@ -1,0 +1,337 @@
+@use "../abstracts/" as *;
+
+.footer {
+    background-color: rgba($primary-color, 0.1);
+    padding: 50px 0 0;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    margin-top: 2rem;
+
+    @include tablet {
+        max-width: 1200px;
+    }
+    
+    &__main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      padding-bottom: 40px;
+      width: 85%;
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      @include tablet {
+        gap: 40px;
+      }
+      
+      @include mobile {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+    
+    &__company {
+      flex: 0 0 22%;
+      
+      @include tablet {
+        flex: 0 0 45%;
+      }
+      
+      @include mobile {
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+        
+        /* Create a wrapper for the logo image if needed */
+        &-wrapper {
+          width: 50px;
+          height: 50px;
+          background-color: $color-btn;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          img {
+            width: 24px; /* Smaller width for the icon inside */
+            height: 24px;
+            border-radius: 0; /* No border radius for the icon */
+          }
+        }
+        
+        span {
+          font-size: 20px;
+          font-weight: 600;
+          color: $dark-text;
+        }
+        
+        @include mobile {
+          justify-content: center;
+        }
+    }
+    
+    &__address {
+      font-style: normal;
+      font-size: 16px;
+      line-height: 1.5;
+      color: $dark-text;
+      margin-bottom: 20px;
+      
+      @include mobile {
+        color: $gray-text;
+        text-align: center;
+      }
+    }
+    
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+        @include mobile {
+          align-items: center;
+        }
+        
+        &-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 16px;
+          color: $dark-text;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          
+          @include mobile {
+            color: $gray-text;
+          }
+      
+          &:hover {
+            color: $primary-color;
+          }
+          
+          img {
+            width: 16px;
+            height: 16px;
+            filter: drop-shadow(0px 0px 0.5px rgb(0, 0, 0));
+          }
+          
+          h3 {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            font-weight: normal;
+            color: inherit;
+            display: inline;
+          }
+        }
+      }
+    
+    &__nav {
+      flex: 0 0 16%;
+      
+      @include tablet {
+        flex: 0 0 45%;
+      }
+      
+      @include mobile {
+        display: none;
+      }
+    }
+    
+    &__title {
+      font-size: 16px;
+      font-weight: 600;
+      color: $footer-bg;
+      margin-bottom: 20px;
+    }
+    
+    &__links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      
+      &-bottom {
+        display: flex;
+        gap: 20px;
+        
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+    
+    &__link {
+      font-size: 16px;
+      font-weight: 400;
+      color: $dark-text;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        cursor: pointer;
+        color: $primary-color;
+      }
+      
+      &-item {
+        line-height: 1;
+      }
+    }
+    
+    &__newsletter {
+      flex: 0 0 26%;
+      
+      @include tablet {
+        flex: 0 0 100%;
+      }
+      
+      @include mobile {
+        flex: 0 0 100%;
+        text-align: center;
+      }
+    }
+    
+    &__social {
+      margin-top: 30px;
+      
+      .footer__title {
+        margin-bottom: 15px;
+      }
+      
+      &-links {
+        display: flex;
+        gap: 15px;
+        
+        @include mobile {
+          justify-content: center;
+        }
+      }
+      
+      &-link {
+        color: $primary-color;
+        
+        img {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+    
+    &__bottom {
+      width: 100%;
+      border-top: 1px solid $border-color;
+      padding: 10px 0;
+      background-color: $footer-bg;
+      
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 85%;
+              
+        @include mobile {
+          flex-direction: column;
+          gap: 15px;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    }
+    
+    &__copyright {
+      font-size: 16px;
+      color: $input-text;
+    }
+    
+    &__bottom-link {
+      font-size: 16px;
+      font-weight: 400;
+      color: $input-text;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        cursor: pointer;
+        color: $primary-color;
+      }
+    }
+    
+    .newsletter-form {
+      margin-bottom: 30px;
+      
+      &__input-group {
+        display: flex;
+        position: relative;
+        
+        @include mobile {
+          max-width: 320px;
+          margin: 0 auto;
+        }
+      }
+      
+      &__input {
+        width: 100%;
+        height: 46px;
+        background-color: $background-light;
+        border: none;
+        border-radius: 23px;
+        padding: 0 50px 0 20px;
+        font-size: 14px;
+        color: $dark-text;
+        
+        &::placeholder {
+          color: $input-text;
+        }
+        
+        &:focus {
+          outline: none;
+          border: 1px solid rgba($primary-color, 0.3);
+        }
+      }
+      
+      &__button {
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: $color-btn;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        color: $background-light;
+        
+        &::before {
+          content: '➜';
+          font-size: 18px;
+        }
+        
+        &:hover {
+          background-color: rgba($primary-color, 0.7);
+        }
+      }
+    }
+}
