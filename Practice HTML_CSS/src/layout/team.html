@@ -1,0 +1,49 @@
+<!-- team.html -->
+<section class="team">
+    <div class="team__container">
+      <div class="team__header">
+        <h4 class="team__subtitle">INTRODUCE YOURSELF TO</h4>
+        <h2 class="team__title">Our Team of Experts</h2>
+      </div>
+  
+      <include
+        src="./components/generic.html"
+        locals='{
+          "listClass": "team__members",
+          "itemClass": "team__member",
+          "iconClass": "team__photo",
+          "contentClass": "team__content",
+          "titleClass": "team__name",
+          "descriptionClass": "team__role",
+          "showImage": true,
+          "list": [
+            {
+              "image": "../assets/images/team-member-1.png",
+              "alt": "Team member",
+              "title": "Brendon M",
+              "description": "CEO & Founder"
+            },
+            {
+              "image": "../assets/images/team-member-2.png",
+              "alt": "Team member",
+              "title": "Jodi J. Appleby",
+              "description": "Real Estate Developer"
+            },
+            {
+              "image": "../assets/images/team-member-3.png",
+              "alt": "Team member",
+              "title": "Justin S. Meza",
+              "description": "Listing Agent"
+            },
+            {
+              "image": "../assets/images/team-member-4.png",
+              "alt": "Team member",
+              "title": "Susan T. Smith",
+              "description": "Buyer\u0027s Agent"
+            }
+          ]
+        }'
+      >
+      </include>
+    </div>
+</section>
