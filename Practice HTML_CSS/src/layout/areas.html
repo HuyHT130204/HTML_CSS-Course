@@ -1,0 +1,56 @@
+<div class="areas-page">
+    <!-- Top Spacer Circle -->
+    <figure class="areas-spacer areas-spacer--top">
+      <img src="../assets/icons/testi-deco.svg" alt="Decorative circle" class="areas-spacer__svg">
+    </figure>
+    
+    <!-- Areas Header -->
+    <div class="areas-header">
+      <p class="areas-header__label">AREAS ACROSS THE TOWN</p>
+      <h2 class="areas-header__title">Neighborhood Properties</h2>
+    </div>
+    
+    <!-- Areas Grid -->
+    <include 
+      src="./components/area-loop.html"
+      locals='{
+        "areas": [
+          {
+            "image": "../assets/images/area1.jpg",
+            "alt": "New York City property",
+            "count": "216",
+            "location": "New York City, NY"
+          },
+          {
+            "image": "../assets/images/area2.jpg",
+            "alt": "Houston property",
+            "count": "141",
+            "location": "Houston, TX"
+          },
+          {
+            "image": "../assets/images/area3.jpg",
+            "alt": "San Diego property",
+            "count": "212",
+            "location": "San Diego, CA"
+          },
+          {
+            "image": "../assets/images/area4.jpg",
+            "alt": "Philadelphia property",
+            "count": "183",
+            "location": "Philadelphia, PA"
+          },
+          {
+            "image": "../assets/images/area5.jpg",
+            "alt": "San Francisco property",
+            "count": "112",
+            "location": "San Francisco, CA"
+          }
+        ]
+      }'
+    ></include>
+    
+    <!-- Bottom Spacer Circle -->
+    <figure class="areas-spacer areas-spacer--bottom">
+      <img src="../assets/icons/testi-deco.svg" alt="Decorative circle" class="areas-spacer__svg">
+    </figure>
+</div>

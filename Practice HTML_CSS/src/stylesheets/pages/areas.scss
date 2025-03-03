@@ -1,0 +1,262 @@
+@use "../abstracts/" as *;
+
+.areas-page {
+  padding: 30px 20px 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  @include tablet {
+    padding: 40px 20px;
+  }
+  
+  @include mobile {
+    padding: 30px 15px;
+  }
+}
+
+.areas-spacer {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    
+    &--top {
+      margin-bottom: 40px;
+      transform: translateX(31rem);
+      
+      .areas-spacer__svg {
+        width: 50px;
+        height: 50px;
+        opacity: 0.7;
+      }
+
+      @include mobile {
+        transform: translate(15rem, -50px);
+      }
+    }
+    
+    &--bottom {
+      margin-top: 60px;
+      transform: translateX(65rem);
+      
+      .areas-spacer__svg {
+        width: 100px;
+        height: 100px;
+        opacity: 0.5;
+      }
+
+      @include mobile {
+        transform: translate(11rem, -230px);
+      }
+    }
+    
+    &__svg {
+      display: inline-block;
+      
+      @include tablet {
+        transform: scale(0.85);
+      }
+      
+      @include mobile {
+        transform: scale(0.7);
+      }
+    }
+    
+    @include tablet {
+      height: 60px;
+      
+      &--top {
+        margin-bottom: 30px;
+      }
+      
+      &--bottom {
+        margin-top: 40px;
+      }
+    }
+    
+    @include mobile {
+      height: 50px;
+      
+      &--top {
+        margin-bottom: 20px;
+      }
+      
+      &--bottom {
+        margin-top: 30px;
+      }
+    }
+  }
+
+.areas-header {
+  text-align: left;
+  margin-bottom: 40px;
+  
+  
+  &__label {
+    color: $primary-color;
+    font-size: 19.4px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  
+  &__title {
+    color: $dark-text;
+    font-size: 39.8px;
+    font-weight: 600;
+    margin: 0;
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+}
+
+.areas {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+  
+  &__item {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+    
+    // Desktop layout
+    @include desktop {
+      height: 320px;
+      
+      &:nth-child(-n+3) {
+        flex: 1 1 calc(33.333% - 24px);
+      }
+      
+      &:nth-child(4) {
+        flex: 1 1 calc(40% - 24px);
+      }
+      
+      &:nth-child(5) {
+        flex: 1 1 calc(60% - 24px);
+      }
+    }
+    
+    @include tablet {
+      aspect-ratio: 1/1;
+    }
+    
+    @include mobile {
+      aspect-ratio: 1/1;
+      width: 210px;
+      height: 210px;
+      margin: 0 auto;
+    }
+  }
+  
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+  }
+  
+  &__content {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 2;
+    width: calc(100% - 48px);
+    
+    @include tablet {
+      bottom: 20px;
+      left: 20px;
+      width: calc(100% - 40px);
+    }
+    
+    @include mobile {
+      bottom: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+    }
+  }
+  
+  &__title {
+    color: rgba($background-light, 0.6);
+    font-size: 57.3px;
+    font-weight: 700;
+    transform: translateY(15px);
+    margin: 0 0 0 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    
+    @include tablet {
+      transform: translateY(0);
+      font-size: 36px;
+    }
+    
+    @include mobile {
+      font-size: 27.6px;
+    }
+  }
+  
+  &__description {
+    color: $background-light;
+    font-size: 19.4px;
+    font-weight: 500;
+    margin: 0 0 0 10px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    
+    @include tablet {
+      transform: translateY(-10px);
+      font-size: 14px;
+    }
+    
+    @include mobile {
+      font-size: 13.3px;
+    }
+  }
+}
