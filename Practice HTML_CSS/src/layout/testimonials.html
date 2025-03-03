@@ -1,0 +1,54 @@
+<section class="testimonials">
+    <div class="testimonials__container">
+      <div class="testimonials__content">
+        <h4 class="testimonials__subtitle">TESTIMONIALS</h4>
+        <h2 class="testimonials__title">Look What Our Customers Say!</h2>
+        <p class="testimonials__description">Fusce venenatis tellus a felis scelerisque, non pulvinar est pellentesque.</p>
+        
+        <div class="testimonials__controls">
+            <a href="#prev" class="testimonials__cta testimonials__cta--prev"></a>
+            <a href="#next" class="testimonials__cta testimonials__cta--next"></a>
+        </div>
+      </div>
+      
+      <div class="testimonials__slider-wrapper">
+        <div class="testimonials__slider">
+          <include
+            src="./components/testimonial-cards.html"
+            locals='{
+              "listClass": "testimonials__list",
+              "cardClass": "testimonial-card",
+              "quoteClass": "testimonial-card__quote",
+              "contentClass": "testimonial-card__content",
+              "avatarClass": "testimonial-card__avatar",
+              "authorClass": "testimonial-card__author",
+              "ratingClass": "testimonial-card__rating",
+              "list": [
+                {
+                  "quote": "I highly recommend Jodi J. Appleby. She was attentive to our needs and worked tirelessly to find us the perfect home. We couldn\u0027t be happier with our new place!",
+                  "avatar": "../assets/images/testimonial-avatar.png",
+                  "author": "Barbara D. Smith",
+                  "rating": 4,
+                  "active": true
+                }
+              ]
+            }'
+          >
+          </include>
+        </div>
+        
+        <include
+          src="./components/testimonial-dots.html"
+          locals='{
+            "dotsClass": "testimonials__dots",
+            "list": [
+              {"active": true},
+              {"active": false},
+              {"active": false}
+            ]
+          }'
+        >
+        </include>
+      </div>
+    </div>
+</section>
