@@ -1,0 +1,14 @@
+<div class="areas__container">
+    <each loop="area in areas">
+      <div class="areas__item">
+        <figure class="areas__image">
+            <img src="{{area.image}}" alt="{{area.alt}}">
+        </figure>
+        <div class="areas__overlay"></div>
+        <div class="areas__content">
+          <h3 class="areas__title">{{area.count}}</h3>
+          <p class="areas__description">{{area.location}}</p>
+        </div>
+      </div>
+    </each>
+</div>

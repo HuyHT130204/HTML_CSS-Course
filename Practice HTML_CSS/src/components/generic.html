@@ -1,76 +1,76 @@
 <div class="{{listClass}}">
-  <each loop="item in list">
-    <div class="{{itemClass}} {{item.extraClass}}">
-      <!-- Image/Icon Section -->
-      <if condition="showImage">
-        <include 
-          src="./components/image-list.html"
-          locals='{
-            "figureClass": "{{iconClass}}",
-            "list": [{
-              "image": "{{item.image}}",
-              "alt": "{{item.alt}}"
-            }],
-            "showMore": false
-          }'
-        ></include>
-      </if>
-
-      <!-- Badge -->
-      <if condition="item.badge">
-        <span class="{{badgeClass}} {{badgeClass}}--{{item.extraClass.split('--')[1]}}">
-          <!-- For badges with number/day format -->
-          <if condition="item.badge.includes(' ')">
-            <span class="{{badgeClass}}__number">{{item.badge.split(' ')[0]}}</span>
-            <span class="{{badgeClass}}__day">{{item.badge.split(' ')[1]}}</span>
-          </if>
-          <!-- For simple badges -->
-          <if condition="!item.badge.includes(' ')">
-            {{item.badge}}
-          </if>
-        </span>
-      </if>
-
-      <!-- Content Section -->
-      <if condition="item.title || item.price || item.description || item.meta || item.cta">
-          <div class="{{contentClass}}">
-          <if condition="item.preTitle">
-              <div class="{{preTitleClass}}">{{item.preTitle}}</div>
-          </if>
-      
-          <if condition="item.title">
-              <if condition="item.titleTag == 'h3' || !item.titleTag">
-              <h3 class="{{titleClass}}">{{item.title}}</h3>
-              </if>
-          </if>
-      
-          <if condition="item.price">
-              <div class="{{priceClass}}">{{item.price}}</div>
-          </if>
-      
-          <if condition="item.description">
-              <p class="{{descriptionClass}}">{{item.description}}</p>
-          </if>
-      
-          <if condition="item.meta">
-              <div class="{{metaClass}}">
-              <each loop="metaItem in item.meta">
-                  <span class="{{metaItemClass}}">{{metaItem}}</span>
-              </each>
-              </div>
-          </if>
-      
-          <if condition="item.cta">
+    <each loop="item in list">
+      <div class="{{itemClass}} {{item.extraClass}}">
+        <!-- Image/Icon Section -->
+        <if condition="showImage">
+          <include 
+            src="./components/image-list.html"
+            locals='{
+              "figureClass": "{{iconClass}}",
+              "list": [{
+                "image": "{{item.image}}",
+                "alt": "{{item.alt}}"
+              }],
+              "showMore": false
+            }'
+          ></include>
+        </if>
+  
+        <!-- Badge -->
+        <if condition="item.badge">
+          <span class="{{badgeClass}} {{badgeClass}}--{{item.extraClass.split('--')[1]}}">
+            <!-- For badges with number/day format -->
+            <if condition="item.badge.includes(' ')">
+              <span class="{{badgeClass}}__number">{{item.badge.split(' ')[0]}}</span>
+              <span class="{{badgeClass}}__day">{{item.badge.split(' ')[1]}}</span>
+            </if>
+            <!-- For simple badges -->
+            <if condition="!item.badge.includes(' ')">
+              {{item.badge}}
+            </if>
+          </span>
+        </if>
+  
+        <!-- Content Section -->
+        <if condition="item.title || item.price || item.description || item.meta || item.cta">
+            <div class="{{contentClass}}">
+            <if condition="item.preTitle">
+                <div class="{{preTitleClass}}">{{item.preTitle}}</div>
+            </if>
+        
+            <if condition="item.title">
+                <if condition="item.titleTag == 'h3' || !item.titleTag">
+                <h3 class="{{titleClass}}">{{item.title}}</h3>
+                </if>
+            </if>
+        
+            <if condition="item.price">
+                <div class="{{priceClass}}">{{item.price}}</div>
+            </if>
+        
+            <if condition="item.description">
+                <p class="{{descriptionClass}}">{{item.description}}</p>
+            </if>
+        
+            <if condition="item.meta">
+                <div class="{{metaClass}}">
+                <each loop="metaItem in item.meta">
+                    <span class="{{metaItemClass}}">{{metaItem}}</span>
+                </each>
+                </div>
+            </if>
+        
+            <if condition="item.ctaLink">
               <a href="{{item.ctaLink}}" class="{{ctaClass}}">{{item.ctaText}}</a>
-          </if>
-          </div>
-      </if>
-
-
-      <!-- Footer -->
-      <if condition="item.footer">
-        <div class="{{footerClass}}">{{item.footer}}</div>
-      </if>
-    </div>
-  </each>
+            </if>
+            </div>
+        </if>
+  
+  
+        <!-- Footer -->
+        <if condition="item.footer">
+          <div class="{{footerClass}}">{{item.footer}}</div>
+        </if>
+      </div>
+    </each>
 </div>
