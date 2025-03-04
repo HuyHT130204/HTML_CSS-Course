@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="footer__main">
+    <!-- Company Info -->
+    <div class="footer__company">
+      <div class="footer__logo">
+        <figure class="footer__logo-wrapper">
+          <img src="../assets/icons/logo.svg" alt="Rezilla logo">
+        </figure>
+        <span>Rezilla</span>
+      </div>
+      <address class="footer__address">
+        2728 Hickory StreetSalt<br>
+        Lake City, UT 84104
+      </address>
+      <include
+        src="./components/generic.html"
+        locals='{
+          "listClass": "footer__contact",
+          "itemClass": "footer__contact-item",
+          "showImage": true,
+          "list": [
+            { 
+              "title": "+1 206-214-2298", 
+              "url": "tel:+12062142298",
+              "image": "../assets/icons/phone.svg",
+              "alt": "Phone"
+            },
+            { 
+              "title": "support@rezilla.com", 
+              "url": "mailto:support@rezilla.com",
+              "image": "../assets/icons/mail.svg",
+              "alt": "Email"
+            }
+          ],
+          "titleClass": ""
+        }'
+      ></include>
+    </div>
+    
+    <!-- Quick Links -->
+    <div class="footer__nav">
+      <h3 class="footer__title">Quick Links</h3>
+      <include
+        src="./components/generic.html"
+        locals='{
+          "listClass": "footer__links",
+          "itemClass": "footer__link-item",
+          "showImage": false,
+          "list": [
+            { "title": "Home" },
+            { "title": "About" },
+            { "title": "Listings" },
+            { "title": "Services" },
+            { "title": "Blogs" },
+            { "title": "Become a Agent" }
+          ],
+          "titleClass": "footer__link"
+        }'
+      ></include>
+    </div>
+    
+    <!-- Discovery -->
+    <div class="footer__nav">
+      <h3 class="footer__title">Discovery</h3>
+      <include
+        src="./components/generic.html"
+        locals='{
+          "listClass": "footer__links",
+          "itemClass": "footer__link-item",
+          "showImage": false,
+          "list": [
+            { "title": "Canada" },
+            { "title": "United States" },
+            { "title": "Germany" },
+            { "title": "Africa" },
+            { "title": "India" }
+          ],
+          "titleClass": "footer__link"
+        }'
+      ></include>
+    </div>
+    
+    <!-- Newsletter -->
+    <div class="footer__newsletter">
+      <h3 class="footer__title">Subscribe to our Newsletter!</h3>
+      <form class="newsletter-form">
+        <div class="newsletter-form__input-group">
+          <input type="email" placeholder="Email Address" class="newsletter-form__input" required>
+          <button type="submit" class="newsletter-form__button"></button>
+        </div>
+      </form>
+      
+      <div class="footer__social">
+        <h3 class="footer__title">Follow Us on</h3>
+        <include
+          src="./components/image-list.html"
+          locals='{
+            "figureClass": "footer__social-links",
+            "list": [
+              { "image": "../assets/icons/linkedin.svg", "alt": "LinkedIn", "className": "footer__social-icon" },
+              { "image": "../assets/icons/facebook.svg", "alt": "Facebook", "className": "footer__social-icon" },
+              { "image": "../assets/icons/instagram.svg", "alt": "Instagram", "className": "footer__social-icon" }
+            ],
+            "showMore": false
+          }'
+        ></include>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer__bottom">
+  <div class="container">
+    <div class="footer__copyright">© Rezilla - All rights reserved</div>
+    <include
+      src="./components/generic.html"
+      locals='{
+        "listClass": "footer__links-bottom",
+        "itemClass": "footer__bottom-link-item",
+        "showImage": false,
+        "list": [
+          { "title": "Terms and Conditions", "url": "#" },
+          { "title": "Privacy Policy", "url": "#" },
+          { "title": "Disclaimer", "url": "#" }
+        ],
+        "titleClass": "footer__bottom-link"
+      }'
+    ></include>
+  </div>
+</div>

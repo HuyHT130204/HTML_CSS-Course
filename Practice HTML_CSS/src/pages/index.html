@@ -9,11 +9,17 @@
     <link rel="stylesheet" href="/src/stylesheets/main.scss">
 </head>
 <body>
+    <div class="wrapper">
         <!-- Header -->
         <include src="layout/header.html"></include>
 
-        <!-- Main -->
-         <include src="layout/main.html"></include>
+        <!-- Main Content -->
+        <include src="layout/main.html"></include>
 
+        <!-- Footer - Separate from main content -->
+        <div class="footer">
+            <include src="layout/footer.html"></include>
+        </div>
+    </div>
 </body>
 </html>
