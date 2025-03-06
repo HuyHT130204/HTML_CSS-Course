@@ -33,6 +33,10 @@
     font-weight: 700;
     margin: 0 0 0.2rem 0;
     color: $dark-text;
+
+    @include tablet {
+      font-size: 2rem;
+    }
   }
 
   &__description {
@@ -40,6 +44,11 @@
     color: $gray-text;
     line-height: 1.5;
     max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     
     @include tablet {
       max-width: 90%;

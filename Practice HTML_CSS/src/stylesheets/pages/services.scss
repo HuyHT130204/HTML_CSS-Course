@@ -7,7 +7,7 @@
   border-top: 1px solid $services-bg;
   border-bottom: 1px solid $services-bg;
 
-  @media screen and (min-width: $medium) {
+  @include tablet {
     padding: 6rem 2rem;
   }
 
@@ -44,7 +44,7 @@
     font-weight: 700;
     color: $dark-text;
     
-    @media screen and (min-width: $medium) {
+    @include tablet {
       font-size: 2.25rem;
     }
     
@@ -73,7 +73,7 @@
     border-radius: 2.5rem;
     padding: 2.5rem 1.5rem;
     width: 340px;
-    height: 363px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,7 +83,7 @@
     
     @include mobile {
       width: 100%;
-      max-width: 340px;
+      max-width: 400px;
       height: auto;
       min-height: 300px;
       border-radius: 1rem;
@@ -102,7 +102,7 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     
-    @include mobile {
+    @include tablet {
       width: 4.5rem;
       height: 4.5rem;
       margin-top: 1rem;
@@ -131,12 +131,19 @@
 
   &__description {
     font-size: 1rem;
+    width: 75%;
     color: $gray-text;
     line-height: 1.5;
     margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
     
-    @media screen and (min-width: $medium) {
-      max-width: 75%;
+    @include tablet {
+      -webkit-line-clamp: 3;
+      width: 85%;
     }
   }
 }
@@ -153,43 +160,5 @@
       align-items: center;
       width: 100%;
     }
-  }
-}
-
-// Ensure no layout issues on medium screens
-@media screen and (min-width: $medium) and (max-width: $tablet) {
-  .services {
-    &__list {
-      justify-content: center;
-      gap: 1.5rem;
-    }
-    
-    .service__item {
-      width: 300px;
-      height: 340px;
-    }
-  }
-
-  .service {
-    &__icon {
-        width: 30%;
-    }
-  }
-}
-
-// Extra small screens
-@media screen and (max-width: calc($medium / 1.6)) {
-  .service__item {
-    padding: 1.5rem 1rem;
-    min-height: 280px;
-  }
-  
-  .service__icon {
-    width: 4rem;
-    height: 4rem;
-  }
-  
-  .service__description {
-    font-size: 0.9rem;
   }
 }
