@@ -112,7 +112,7 @@
       }
       
       &__title {
-        font-size: 28px;
+        font-size: 27.6px;
       }
       
       &__subtitle {
@@ -138,6 +138,10 @@
     &:hover {
       transform: translateY(-10px);
     }
+    @include tablet {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   
     &__image {
       width: 100%;
@@ -153,12 +157,7 @@
         transition: transform 0.3s ease;
       }
       
-      @include tablet {
-        height: 220px;
-      }
-      
       @include mobile {
-        height: 310px;
         margin-bottom: 40px;
       }
     }
@@ -224,6 +223,11 @@
       line-height: 1.5;
       margin: 0 0 20px;
       flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
       
       @include mobile {
         font-size: 14px;

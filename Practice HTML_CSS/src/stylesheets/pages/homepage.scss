@@ -6,16 +6,17 @@
     padding: 60px 0;
     min-height: 150vh;
     background-color: $background-light;
+    min-height: auto;
+
 
     &__bg {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        max-width: none;
-        height: 85%;
+        height: 100%;
         z-index: 0;
-        transform: translateY(-130px);
+        transform: translateY(-100px);
     }
 
     &__content {
@@ -81,18 +82,18 @@
     }
 
     &__title {
-        font-size: 48px;
+        font-size: 3rem;
         line-height: 1.2;
         font-weight: 600;
         color: $dark-text;
         margin-bottom: 14px;
 
         @include tablet {
-            font-size: 36px;
+            font-size: 2.5rem;
         }
 
         @include mobile {
-            font-size: 32px;
+            font-size: 2.4875rem;
         }
     }
 
@@ -101,8 +102,14 @@
         font-size: 16px;
         line-height: 1.6;
         max-width: 550px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
 
         @include mobile {
+            font-size: 0.83125rem;
             text-align: left;
         }
     }
@@ -533,7 +540,16 @@
 
 .brands-section {
     position: relative;
-    transform: translateY(-100%);
+    margin-bottom: 8rem;
+    transform: translateY(-20%);
+
+    @include tablet {
+        margin-bottom: 3rem;
+    }
+
+    @include mobile {
+        margin-bottom: -8rem;
+    }
     
     .spacer-circle {
       position: absolute;
@@ -586,7 +602,7 @@
       }
 
       @include mobile {
-        transform: translateY(-120%);
+        transform: translateY(-220%);
       }
     }
 
