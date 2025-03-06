@@ -55,8 +55,13 @@
 .about__subtitle {
     color: $primary-color;
     font-size: 19.4px;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 1rem;
+
+
+    @include mobile {
+        font-size: 1rem;
+    }
 }
 
 .about__title {
@@ -68,6 +73,10 @@
     
     @include mobile {
         font-size: 2rem;
+    }
+
+    @include small-mobile {
+        font-size: 1.5rem;
     }
 }
 
@@ -111,12 +120,14 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
-    
-    @include tablet {
-        max-width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
     }
     
-    @include mobile {
+    @include tablet {
         max-width: 100%;
     }
 }
@@ -152,6 +163,10 @@
     color: $primary-color;
     margin-bottom: 0.25rem;
     white-space: pre-line;
+
+    @include mobile {
+        font-size: 1rem;
+    }
 }
 
 .feature__description {
@@ -164,7 +179,8 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     
-    @include mobile {
+    @include small-mobile {
+      font-size: 0.7rem;
       max-width: 100%;
     }
 }
@@ -196,30 +212,80 @@
 .est-logo {
     position: absolute;
     width: 45%; 
-    min-width: 120px; 
+    min-width: 100px; 
     max-width: 206px; 
     aspect-ratio: 1; 
     top: 50%;
     left: 50%;
     transform: translate(-25%, -200%);
     z-index: 2;
-    
+    animation: rotateLogo 30s linear infinite;
+
     @include tablet {
         width: 30%;
         transform: translate(-40%, -180%);
     }
-    
+
     @include mobile {
         width: 25%;
-        transform: translate(-35%, -200%);
+        transform: translate(-35%, -220%);
     }
-    
+
+    @include small-mobile {
+        transform: translate(-40%, -180%);
+    }
+
     img {
         width: 100%;
         height: 100%;
         object-fit: contain;
     }
 }
+
+// Định nghĩa hiệu ứng xoay
+@keyframes rotateLogo {
+    from {
+        transform: translate(-25%, -200%) rotate(0deg);
+    }
+    to {
+        transform: translate(-25%, -200%) rotate(360deg);
+    }
+}
+
+// Điều chỉnh hiệu ứng xoay theo từng màn hình
+@include tablet {
+    @keyframes rotateLogo {
+        from {
+            transform: translate(-40%, -180%) rotate(0deg);
+        }
+        to {
+            transform: translate(-40%, -180%) rotate(360deg);
+        }
+    }
+}
+
+@include mobile {
+    @keyframes rotateLogo {
+        from {
+            transform: translate(-35%, -220%) rotate(0deg);
+        }
+        to {
+            transform: translate(-35%, -220%) rotate(360deg);
+        }
+    }
+}
+
+@include small-mobile {
+    @keyframes rotateLogo {
+        from {
+            transform: translate(-40%, -180%) rotate(0deg);
+        }
+        to {
+            transform: translate(-40%, -180%) rotate(360deg);
+        }
+    }
+}
+
 
 /* Decorative SVG */
 .decorative-circle {
@@ -250,18 +316,33 @@
     grid-row: 1 / span 2;
     width: 100%;
     transform: translateY(20px);
+
+    &:hover {
+        transition: transform 0.8s ease;
+        transform: translateY(15px) scale(1.02);
+    }
 }
 
 .gallery__item:nth-child(2) {
     grid-column: 2;
     grid-row: 1;
     transform: translateY(-40px);
+    
+    &:hover {
+        transition: transform 0.8s ease;
+        transform: translateY(-50px) scale(1.01);
+    }
 }
 
 .gallery__item:nth-child(3) {
     grid-column: 2;
     grid-row: 2;
     transform: translateY(-105px);
+
+    &:hover {
+        transition: transform 0.8s ease;
+        transform: translateY(-110px) scale(1.01);
+    }
 }
 
 .gallery__main,
@@ -318,5 +399,9 @@
     @include mobile {
         width: 100%;
         transform: translate(0, 1.5rem);
+    }
+
+    @include small-mobile {
+        transform: translate(0, 2.2rem);
     }
 }

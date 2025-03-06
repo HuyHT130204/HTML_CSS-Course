@@ -12,84 +12,127 @@
   @include mobile {
     padding: 30px 15px;
   }
+  
+  @include small-mobile {
+    padding: 20px 10px;
+  }
 }
 
 .areas-spacer {
-    position: relative;
-    width: 100%;
-    height: 80px;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  
+  &--top {
+    margin-bottom: 40px;
+    transform: translateX(31rem);
     
-    &--top {
-      margin-bottom: 40px;
-      transform: translateX(31rem);
-      
-      .areas-spacer__svg {
-        width: 50px;
-        height: 50px;
-        opacity: 0.7;
-      }
+    .areas-spacer__svg {
+      width: 50px;
+      height: 50px;
+      opacity: 0.7;
+    }
 
-      @include mobile {
-        transform: translate(15rem, -50px);
-      }
+    @include tablet {
+      transform: translateX(20rem);
     }
-    
-    &--bottom {
-      margin-top: 60px;
-      transform: translateX(65rem);
-      
-      .areas-spacer__svg {
-        width: 100px;
-        height: 100px;
-        opacity: 0.5;
-      }
 
-      @include mobile {
-        transform: translate(11rem, -230px);
-      }
+    @include mobile {
+      transform: translate(15rem, -50px);
     }
     
-    &__svg {
-      display: inline-block;
-      
-      @include tablet {
-        transform: scale(0.85);
-      }
-      
-      @include mobile {
-        transform: scale(0.7);
-      }
+    @include small-mobile {
+      transform: translate(10rem, -40px);
     }
+  }
+  
+  &--bottom {
+    margin-top: 60px;
+    transform: translateX(65rem);
+    
+    .areas-spacer__svg {
+      width: 100px;
+      height: 100px;
+      opacity: 0.5;
+    }
+
+    @include tablet {
+      transform: translateX(40rem);
+    }
+
+    @include mobile {
+      transform: translate(11rem, -230px);
+    }
+    
+    @include small-mobile {
+      transform: translate(8rem, -200px);
+    }
+  }
+  
+  &__svg {
+    display: inline-block;
     
     @include tablet {
-      height: 60px;
-      
-      &--top {
-        margin-bottom: 30px;
-      }
-      
-      &--bottom {
-        margin-top: 40px;
-      }
+      transform: scale(0.85);
     }
     
     @include mobile {
-      height: 50px;
-      
-      &--top {
-        margin-bottom: 20px;
-      }
-      
-      &--bottom {
-        margin-top: 30px;
-      }
+      transform: scale(0.7);
+    }
+    
+    @include small-mobile {
+      transform: scale(0.6);
     }
   }
+  
+  @include tablet {
+    height: 60px;
+    
+    &--top {
+      margin-bottom: 30px;
+    }
+    
+    &--bottom {
+      margin-top: 40px;
+    }
+  }
+  
+  @include mobile {
+    height: 50px;
+    
+    &--top {
+      margin-bottom: 20px;
+    }
+    
+    &--bottom {
+      margin-top: 30px;
+    }
+  }
+  
+  @include small-mobile {
+    height: 40px;
+    
+    &--top {
+      margin-bottom: 15px;
+    }
+    
+    &--bottom {
+      margin-top: 25px;
+    }
+  }
+}
 
 .areas-header {
   text-align: left;
   margin-bottom: 40px;
   
+  @include mobile {
+    margin-bottom: 30px;
+  }
+  
+  @include small-mobile {
+    margin-bottom: 25px;
+  }
   
   &__label {
     color: $primary-color;
@@ -98,6 +141,20 @@
     letter-spacing: 2px;
     margin-bottom: 8px;
     text-transform: uppercase;
+    
+    @include tablet {
+      font-size: 17px;
+    }
+    
+    @include mobile {
+      font-size: 15px;
+      letter-spacing: 1.5px;
+    }
+    
+    @include small-mobile {
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
   }
   
   &__title {
@@ -113,6 +170,10 @@
     @include mobile {
       font-size: 28px;
     }
+    
+    @include small-mobile {
+      font-size: 23px;
+    }
   }
 }
 
@@ -126,12 +187,17 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+      justify-content: center;
     }
     
     @include mobile {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
+    }
+    
+    @include small-mobile {
+      grid-template-columns: 1fr;
+      gap: 15px;
     }
   }
   
@@ -141,9 +207,10 @@
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    transition: transform 0.3s ease;
 
     &:hover {
-        transform: scale(1.02);
+      transform: scale(1.02);
     }
     
     // Desktop layout
@@ -165,13 +232,21 @@
     
     @include tablet {
       aspect-ratio: 1/1;
+      border-radius: 25px;
     }
     
     @include mobile {
       aspect-ratio: 1/1;
-      width: 210px;
-      height: 210px;
+      width: 100%;
+      height: auto;
       margin: 0 auto;
+      border-radius: 20px;
+    }
+    
+    @include small-mobile {
+      max-width: 280px;
+      margin: 0 auto;
+      border-radius: 15px;
     }
   }
   
@@ -219,6 +294,12 @@
     }
     
     @include mobile {
+      bottom: 15px;
+      left: 15px;
+      width: calc(100% - 30px);
+    }
+    
+    @include small-mobile {
       bottom: 10px;
       left: 10px;
       width: calc(100% - 20px);
@@ -240,6 +321,12 @@
     
     @include mobile {
       font-size: 27.6px;
+      margin: 0 0 0 5px;
+    }
+    
+    @include small-mobile {
+      font-size: 24px;
+      margin: 0 0 0 5px;
     }
   }
   
@@ -252,11 +339,17 @@
     
     @include tablet {
       transform: translateY(-10px);
-      font-size: 14px;
+      font-size: 16px;
     }
     
     @include mobile {
-      font-size: 13.3px;
+      font-size: 14px;
+      margin: 0 0 0 5px;
+    }
+    
+    @include small-mobile {
+      font-size: 13px;
+      margin: 0 0 0 5px;
     }
   }
 }

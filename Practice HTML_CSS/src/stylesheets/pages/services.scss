@@ -35,7 +35,11 @@
     margin-bottom: 0.75rem;
     
     @include mobile {
-      font-size: 16px;
+      font-size: 1rem;
+    }
+
+    @include small-mobile {
+      font-size: 0.8rem;
     }
   }
 
@@ -50,6 +54,10 @@
     
     @include mobile {
       font-size: 1.75rem;
+    }
+
+    @include small-mobile {
+      font-size: 1.5rem;
     }
   }
 
@@ -85,7 +93,7 @@
       width: 100%;
       max-width: 400px;
       height: auto;
-      min-height: 300px;
+      min-height: 270px;
       border-radius: 1rem;
       padding: 2rem 1.5rem;
     }
@@ -108,6 +116,13 @@
       margin-top: 1rem;
       margin-bottom: 1.25rem;
     }
+
+    @include mobile {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-top: 0.8rem;
+      margin-bottom: 0.95rem;
+    }
     
     img {
       width: 2.5rem;
@@ -115,9 +130,19 @@
       object-fit: contain;
       filter: brightness(0) invert(1); // Make icon white
       
-      @include mobile {
+      @include tablet {
         width: 2rem;
         height: 2rem;
+      }
+
+      @include mobile {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+
+      @include small-mobile {
+        width: 1.5rem;
+        height: 1.5rem;
       }
     }
   }
@@ -127,6 +152,10 @@
     font-weight: 600;
     color: $dark-text;
     margin-bottom: 0.5rem;
+
+    @include mobile {
+      font-size: 1.1rem;
+    }
   }
 
   &__description {
@@ -144,6 +173,10 @@
     @include tablet {
       -webkit-line-clamp: 3;
       width: 85%;
+    }
+    @include mobile {
+      font-size: 0.9rem;
+      width: 75%;
     }
   }
 }

@@ -21,7 +21,82 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+// Animation keyframes
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from { 
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulseEffect {
+  0% {
+      transform: translate(-25%, -200%) scale(1);
+  }
+  50% {
+      transform: translate(-25%, -200%) scale(1.2);
+  }
+  100% {
+      transform: translate(-25%, -200%) scale(1);
+  }
+}
+// Prefers-reduced-motion media query for accessibility
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 // Media-Query Mixin
+@mixin small-mobile {
+  @media screen and (max-width: $small-mobile) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media screen and (max-width: $mobile) {
     @content;
@@ -34,7 +109,6 @@
   }
 }
 
-// Có thể bổ sung thêm desktop và các thiết bị khác
 @mixin desktop {
   @media screen and (min-width: $extra-large) {
     @content;

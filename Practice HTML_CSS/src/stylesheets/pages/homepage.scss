@@ -7,7 +7,7 @@
     min-height: 150vh;
     background-color: $background-light;
     min-height: auto;
-
+    animation: fadeIn 0.8s ease-out;
 
     &__bg {
         position: absolute;
@@ -17,6 +17,7 @@
         height: 100%;
         z-index: 0;
         transform: translateY(-100px);
+        transition: transform 0.3s ease-out;
     }
 
     &__content {
@@ -47,6 +48,7 @@
     &__left {
         flex: 1;
         max-width: 650px;
+        animation: slideUp 0.6s ease-out 0.2s both;
 
         @include mobile {
             max-width: 100%;
@@ -56,6 +58,7 @@
     &__right {
         width: 420px;
         min-width: 320px;
+        animation: slideInRight 0.6s ease-out 0.4s both;
 
         @include mobile {
             width: 100%;
@@ -71,6 +74,7 @@
         text-transform: uppercase;
         margin-bottom: 16px;
         display: block;
+        animation: fadeIn 0.5s ease-out 0.6s both;
         
         @include tablet {
             font-size: 18px;
@@ -87,6 +91,7 @@
         font-weight: 600;
         color: $dark-text;
         margin-bottom: 14px;
+        animation: slideUp 0.5s ease-out 0.7s both;
 
         @include tablet {
             font-size: 2.5rem;
@@ -94,6 +99,10 @@
 
         @include mobile {
             font-size: 2.4875rem;
+        }
+
+        @include small-mobile {
+            font-size: 2rem;
         }
     }
 
@@ -107,6 +116,7 @@
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+        animation: slideUp 0.5s ease-out 0.8s both;
 
         @include mobile {
             font-size: 0.83125rem;
@@ -124,12 +134,34 @@
     border-radius: 32px;
     margin-top: 30px;
     padding: 32px;
-    width: 420px;
-    height: 582px;
+    width: 100%; 
+    max-width: 420px;
+    height: auto;
     box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.8s ease-out 0.6s both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    @include tablet {
+        padding: 26px;
+        max-width: 360px;
+        border-radius: 28px;
+    }
 
     @include mobile {
-        padding: 24px;
+        padding: 18px;
+        margin-top: 15px;
+        border-radius: 20px;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include small-mobile {
+        max-width: 290px;
     }
 }
 
@@ -138,8 +170,14 @@
     margin-bottom: 32px;
     border-bottom: 3px solid $background-light;
 
+    @include tablet {
+        margin-bottom: 24px;
+    }
+
     @include mobile {
-        gap: 20px;
+        gap: 12px; // Smaller gap
+        margin-bottom: 18px; // Smaller margin
+        border-bottom-width: 2px; // Thinner border
     }
 
     &__btn {
@@ -152,20 +190,33 @@
         cursor: pointer;
         position: relative;
         font-size: 16px;
-        transition: color 0.3s ease;
         text-align: center;
 
+        @include tablet {
+            padding-bottom: 18px;
+            font-size: 15px;
+        }
+
+        @include mobile {
+            padding-bottom: 12px; // Smaller padding
+            font-size: 13px; // Smaller font
+        }
 
         &::before {
             content: '';
             position: absolute;
             bottom: -1px;
             left: 50%;
-            width: 135%; 
+            width: 130%; 
             height: 1px;
             background: $input-text;
             border-radius: 2px;
             transform: translateX(-50%);
+            transition: width 0.3s ease;
+
+            @include mobile {
+                height: 0.5px; // Thinner line on mobile
+            }
         }
 
         &.active {
@@ -183,13 +234,19 @@
                 background: $color-btn;
                 border-radius: 2px;
                 transform: translateX(-50%);
+                animation: slideIn 0.4s ease-out;
+
+                @include mobile {
+                    height: 2px; // Thinner active line
+                    width: 80%; // Even shorter active line
+                }
             }
         }
     }
 }
 
-
 .search-form {
+    margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -202,9 +259,25 @@
         font-size: 16px;
         background: $input-bg;
         color: $input-text;
+        animation: fadeIn 0.4s ease-out 0.9s both;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         &:focus {
             outline: none;
+            transform: translateY(-2px);
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        @include tablet {
+            padding: 18px;
+            border-radius: 14px;
+            font-size: 15px;
+        }
+
+        @include mobile {
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 14px;
         }
 
         &::placeholder {
@@ -215,6 +288,7 @@
     &__select {
         width: 100%;
         position: relative;
+        animation: fadeIn 0.4s ease-out 1s both;
         
         select {
             width: 100%;
@@ -226,9 +300,24 @@
             appearance: none;
             color: $input-text;
             cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             
             &:focus {
                 outline: none;
+                transform: translateY(-2px);
+                box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+            }
+            
+            @include tablet {
+                padding: 18px;
+                border-radius: 14px;
+                font-size: 15px;
+            }
+    
+            @include mobile {
+                padding: 14px;
+                border-radius: 12px;
+                font-size: 14px;
             }
         }
 
@@ -244,6 +333,25 @@
             background-repeat: no-repeat;
             background-position: center;
             pointer-events: none;
+            transition: transform 0.3s ease;
+
+            @include tablet {
+                right: 18px;
+                width: 10px;
+                height: 10px;
+                background-size: 12px 6px;
+            }
+
+            @include mobile {
+                right: 14px;
+                width: 8px;
+                height: 8px;
+                background-size: 10px 5px;
+            }
+        }
+        
+        &:focus-within:after {
+            transform: translateY(-50%) rotate(180deg);
         }
     }
 
@@ -258,6 +366,27 @@
         cursor: pointer;
         padding: 20px 0;
         margin-top: -30px;
+        animation: fadeIn 0.4s ease-out 1.1s both;
+        transition: transform 0.2s ease, color 0.2s ease;
+
+        &:hover {
+            transform: translateX(5px);
+            color: $primary-color;
+        }
+
+        @include tablet {
+            font-size: 15px;
+            padding: 16px 0;
+            margin-top: -24px;
+            gap: 6px;
+        }
+
+        @include mobile {
+            font-size: 13px;
+            padding: 12px 0;
+            margin-top: -20px;
+            gap: 4px;
+        }
     }
 
     &__submit {
@@ -275,12 +404,34 @@
         justify-content: center;
         gap: 12px;
         margin-top: 8px;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeIn 0.4s ease-out 1.2s both;
+
+        @include tablet {
+            padding: 16px;
+            border-radius: 40px;
+            font-size: 15px;
+            gap: 10px;
+        }
+
+        @include mobile {
+            padding: 12px;
+            border-radius: 30px;
+            font-size: 14px;
+            gap: 8px;
+            margin-top: 6px;
+        }
 
         &:hover {
             background: $primary-color;
+            transform: translateY(-3px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
         }
-
+        
+        &:active {
+            transform: translateY(-1px);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
     }
 }
 
@@ -291,6 +442,7 @@
     width: 100%;
     margin-left: -30px;
     max-width: 610px;
+    animation: slideUp 0.7s ease-out 0.5s both;
     
     @include tablet {
         margin-left: 0;
@@ -311,10 +463,15 @@
             height: auto;
             display: block;
             border-radius: 40px;
+            transition: transform 0.5s ease-out;
 
             @include mobile {
                 border-radius: 20px;
             }
+        }
+        
+        &:hover img {
+            transform: scale(1.02);
         }
     }
 
@@ -330,11 +487,20 @@
         cursor: pointer;
         @include flex-center;
         z-index: 2;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+        animation: fadeIn 0.5s ease-out 1s both;
 
         &:hover {
             background: $background-light;
             @include card-shadow;
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        &:focus {
+            outline: 2px solid $primary-color;
+            outline-offset: 2px;
         }
 
         &--prev {
@@ -350,6 +516,11 @@
             height: 24px;
             stroke: $dark-text;
             color: $gray-text;
+            transition: transform 0.3s ease;
+        }
+        
+        &:hover svg {
+            transform: scale(1.1);
         }
 
         @include mobile {
@@ -371,6 +542,7 @@
         display: flex;
         gap: 8px;
         z-index: 2;
+        animation: fadeIn 0.5s ease-out 1.2s both;
 
         @include tablet {
             bottom: 10px;
@@ -388,7 +560,7 @@
             background: rgba(255, 255, 255, 0.5);
             border-radius: 2px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             margin: 10px;
 
             &.active {
@@ -396,6 +568,16 @@
                 width: 10vw;
                 max-width: 100px;
                 min-width: 40px;
+                animation: pulse 2s infinite ease-in-out;
+            }
+            
+            &:hover:not(.active) {
+                background: rgba(255, 255, 255, 0.8);
+            }
+            
+            &:focus {
+                outline: 2px solid $primary-color;
+                outline-offset: 2px;
             }
 
             @include tablet {
@@ -419,6 +601,7 @@
     position: relative;
     z-index: 1;
     justify-content: center;
+    animation: fadeIn 0.8s ease-out 1.3s both;
 
     @include tablet {
         flex-wrap: wrap;
@@ -444,6 +627,18 @@
     align-items: center;
     gap: 16px;
     @include card-shadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 0.5s ease-out var(--delay, 1.4s) both;
+    
+    // Apply different animation delays
+    &:nth-child(1) { --delay: 1.4s; }
+    &:nth-child(2) { --delay: 1.5s; }
+    &:nth-child(3) { --delay: 1.6s; }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.08);
+    }
 
     @include mobile {
         font-size: 14px;
@@ -460,12 +655,18 @@
         figure {
             margin-left: -12px;
             margin-top: 5px;
+            transition: transform 0.3s ease;
+            
+            &:hover {
+                transform: translateY(-3px) scale(1.1);
+                z-index: 3;
+            }
         }
         img {
             width: 100%;
             height: auto;
             border-radius: 50%;
-            border: 2px solid $background-light;
+            transition: transform 0.3s ease;
 
             &:first-child {
                 margin-left: 0;
@@ -485,6 +686,11 @@
         font-weight: 500;
         position: relative;
         overflow: hidden;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.1);
+        }
     
         &::after {
             content: "";
@@ -500,7 +706,8 @@
     
         span {
             position: relative;
-            z-index: 1; // Đặt văn bản lên trên lớp phủ
+            z-index: 1;
+            animation: pulse 2s infinite;
         }
         p {
             font-size: medium;
@@ -512,11 +719,21 @@
         height: 52px;
         border-radius: 50%;
         overflow: hidden;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.1);
+        }
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        &:hover img {
+            transform: scale(1.1);
         }
     }
 
@@ -529,19 +746,25 @@
             font-weight: 600;
             font-size: 16px;
             margin-bottom: 2px;
+            transition: color 0.3s ease;
         }
 
         span {
             color: $gray-text;
             font-size: 14px;
+            transition: color 0.3s ease;
         }
+    }
+    
+    &:hover &__text strong {
+        color: $primary-color;
     }
 }
 
 .brands-section {
     position: relative;
     margin-bottom: 8rem;
-    transform: translateY(-20%);
+    animation: fadeIn 0.8s ease-out 1.8s both;
 
     @include tablet {
         margin-bottom: 3rem;
@@ -550,13 +773,20 @@
     @include mobile {
         margin-bottom: -8rem;
     }
+
+    @include small-mobile {
+        margin-bottom: -15rem;
+        margin-top: 3rem;
+    }
     
     .spacer-circle {
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      transform: translateY(-130%);
-      z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 70rem;
+        margin: 0 auto; /* Center horizontally */
+        z-index: 0;
+        max-width: 80%; /* Prevent it from extending too far */
     }
     
     .container {
@@ -572,6 +802,7 @@
         font-size: 18px;
         color: $gray-text;
         font-weight: 500;
+        animation: slideUp 0.5s ease-out 1.9s both;
       }
       
       .brands-logo-container {
@@ -588,10 +819,21 @@
           opacity: 0.7;
           transition: all 0.3s ease;
           flex-shrink: 0;
+          animation: fadeIn 0.5s ease-out calc(2s + var(--i, 0) * 0.1s) both;
+          
+          // Stagger animations
+          &:nth-child(1) { --i: 0; }
+          &:nth-child(2) { --i: 1; }
+          &:nth-child(3) { --i: 2; }
+          &:nth-child(4) { --i: 3; }
+          &:nth-child(5) { --i: 4; }
+          &:nth-child(6) { --i: 5; }
           
           &:hover {
             filter: grayscale(0);
             opacity: 1;
+            transform: translateY(-5px);
+            cursor: pointer;
           }
         }
       }
@@ -611,4 +853,17 @@
         display: none;
       }
     }
+}
+
+// Add Intersection Observer functionality (can be added to JS file)
+// This class will be added by JavaScript when element enters viewport
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

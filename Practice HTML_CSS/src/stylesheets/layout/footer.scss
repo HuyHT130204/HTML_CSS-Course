@@ -84,7 +84,7 @@
     
     &__address {
       font-style: normal;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 1.5;
       color: $dark-text;
       margin-bottom: 20px;
@@ -92,6 +92,7 @@
       @include mobile {
         color: $gray-text;
         text-align: center;
+        font-size: 0.8rem;
       }
     }
     
@@ -108,7 +109,7 @@
           display: flex;
           align-items: center;
           gap: 8px;
-          font-size: 16px;
+          font-size: 1rem;
           color: $dark-text;
           text-decoration: none;
           transition: color 0.3s ease;
@@ -130,10 +131,14 @@
           h3 {
             margin: 0;
             padding: 0;
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: normal;
             color: inherit;
             display: inline;
+
+            @include mobile {
+              font-size: 0.8rem;
+            }
           }
         }
       }
@@ -151,10 +156,14 @@
     }
     
     &__title {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 600;
       color: $footer-bg;
       margin-bottom: 20px;
+
+      @include mobile {
+        font-size: 0.8rem;
+      }
     }
     
     &__links {
@@ -239,6 +248,10 @@
     &__copyright {
       font-size: 16px;
       color: $input-text;
+
+      @include mobile {
+        font-size: 0.75rem;
+      }
     }
     
     &__bottom-link {
@@ -286,6 +299,10 @@
         &:focus {
           outline: none;
           border: 1px solid rgba($primary-color, 0.3);
+        }
+
+        @include mobile {
+          font-size: 0.75rem;
         }
       }
       

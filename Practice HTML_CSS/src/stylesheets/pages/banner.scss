@@ -139,6 +139,10 @@
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
       }
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
     }
     
     &__description {
@@ -170,6 +174,10 @@
           width: 100%;
           max-width: 100%;
         }
+
+        @include mobile {
+          font-size: 0.75rem;
+        }
       }
     
     &__button {
@@ -186,7 +194,9 @@
         transform: translateY(-40px);
                 
         &:hover {
-            transform: translateY(-45px);
+          transform: translateY(-45px);
+          background-color: $primary-color;
+          color: $background-light;
         }
 
         @include tablet {
@@ -202,6 +212,7 @@
         @include mobile {
           align-self: flex-start;
           transform: translateY(0);
+          font-size: 0.7rem;
           
           &:hover {
             transform: translateY(-5px);

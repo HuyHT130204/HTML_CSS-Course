@@ -3,8 +3,15 @@
 .navbar {
     background-color: $background-light;
     padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     position: relative;
+    z-index: 1;
+    // Animation cho navbar khi scroll
+    transition: box-shadow 0.3s ease, transform 0.4s ease;
+    
+    &.scrolled {
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transform: translateY(-5px);
+    }
 
     .container {
         display: flex;
@@ -17,6 +24,12 @@
     &__left {
         flex: 0 1 auto;
         transform: translateX(-5%);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: translateX(-5%) scale(1.02);
+        }
 
         @media (max-width: 1350px) {
             flex-basis: 25%;
@@ -31,6 +44,9 @@
             background-color: $background-light;
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            // Animation cho mobile menu
+            animation: slideDown 0.3s ease forwards;
+            transform-origin: top;
         }
     }
 
@@ -39,6 +55,11 @@
         margin: 0 40px;
         text-align: center;
         transform: translateX(-30%);
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: translateX(-30%) translateY(-2px);
+        }
 
         @media (max-width: 1350px) {
             margin: 0 20px;
@@ -50,6 +71,10 @@
             display: flex;
             justify-content: left;
             transform: translateX(0);
+            
+            &:hover {
+                transform: translateY(-2px);
+            }
         }
     }
 
@@ -58,6 +83,7 @@
         display: flex;
         justify-content: flex-end;
         gap: 16px;
+        transition: opacity 0.3s ease;
 
         @media (max-width: 1350px) {
             flex-basis: 25%;
@@ -66,6 +92,7 @@
 
         @media (max-width: 992px) {
             display: none;
+            animation: fadeIn 0.4s ease forwards;
         }
     }
 
@@ -88,6 +115,12 @@
 
         li {
             display: flex;
+            // Animation cho các item trên menu
+            transition: transform 0.3s ease;
+            
+            &:hover {
+                transform: translateY(-3px);
+            }
         }
 
         a.link {
@@ -99,11 +132,37 @@
             white-space: nowrap;
             display: flex;
             align-items: center;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+            
+            // Tạo hiệu ứng underline cho link khi hover
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $listing-bg;
+                transition: width 0.3s ease;
+            }
+            
+            &:hover {                
+                &:after {
+                    width: 100%;
+                }
+                
+                figure {
+                    transform: rotate(360deg);
+                }
+            }
 
             figure {
                 margin: 0 0 0 5px;
                 display: flex;
                 align-items: center;
+                transition: transform 0.3s ease;
             }
 
             &.active {
@@ -112,6 +171,11 @@
                 padding: 8px 16px;
                 border-radius: 30px;
                 transform: translateX(20%);
+                animation: pulse 2s infinite;
+                
+                &:after {
+                    display: none;
+                }
             }
         }
     }
@@ -125,6 +189,11 @@
         align-items: center;
         gap: 8px;
         white-space: nowrap;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
 
         @media (max-width: 992px) {
             font-size: 1.25rem;
@@ -142,6 +211,12 @@
         align-items: center;
         text-decoration: none;
         white-space: nowrap;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
     }
 
     &__login {
@@ -163,7 +238,16 @@
         width: 169px;
         height: 50px;
         border-radius: 40px;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        &:active {
+            transform: translateY(-1px);
+        }
     }
     
 }
@@ -177,6 +261,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 
     @media (max-width: 992px) {
         width: 40px;
@@ -192,13 +277,18 @@
 .nav-toggle-label {
     display: none;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
     
     @media (max-width: 992px) {
         display: block;
     }
 }
 
-/* Show mobile menu when checkbox is checked */
+/* Show mobile menu when checkbox is checked with animation */
 #nav-toggle:checked ~ .navbar__left {
     display: block;
 }
@@ -213,4 +303,28 @@
     background-color: $background-light;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Animation keyframes */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(67, 97, 238, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
+    }
 }

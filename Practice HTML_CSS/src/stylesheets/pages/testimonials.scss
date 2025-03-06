@@ -12,6 +12,10 @@
         padding: 40px 0;
     }
     
+    @include small-mobile {
+        padding: 30px 0;
+    }
+    
     &__container {
         max-width: 1200px;
         margin: 0 auto;
@@ -23,6 +27,16 @@
         @include tablet {
             flex-direction: column;
             gap: 40px;
+            padding: 0 25px;
+        }
+        
+        @include mobile {
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        @include small-mobile {
+            padding: 0 15px;
         }
     }
     
@@ -40,6 +54,16 @@
             transform: translateY(30px);
             margin-top: 30px;
         }
+        
+        @include mobile {
+            transform: translateY(20px);
+            margin-top: 20px;
+        }
+        
+        @include small-mobile {
+            transform: translateY(10px);
+            margin-top: 10px;
+        }
     }
     
     &__subtitle {
@@ -48,6 +72,16 @@
         letter-spacing: 1.5px;
         color: $primary-color;
         margin-bottom: 10px;
+        
+        @include mobile {
+            font-size: 17px;
+            letter-spacing: 1.2px;
+        }
+        
+        @include small-mobile {
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
     }
     
     &__title {
@@ -62,7 +96,13 @@
         }
         
         @include mobile {
-            width: 80%;
+            width: 90%;
+            font-size: 24px;
+        }
+        
+        @include small-mobile {
+            width: 100%;
+            font-size: 22px;
         }
     }
     
@@ -76,11 +116,24 @@
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+        
+        @include mobile {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        
+        @include small-mobile {
+            margin-bottom: 20px;
+        }
     }
     
     &__controls {
         display: flex;
         gap: 16px;
+        
+        @include small-mobile {
+            gap: 10px;
+        }
     }
     
     &__cta {
@@ -145,6 +198,14 @@
     &__list {
         position: relative;
         min-height: 250px;
+        
+        @include mobile {
+            min-height: 220px;
+        }
+        
+        @include small-mobile {
+            min-height: 200px;
+        }
     }
     
     &__dots {
@@ -169,6 +230,16 @@
             justify-content: center;
             gap: 8px;
         }
+        
+        @include mobile {
+            margin-top: 20px;
+            gap: 6px;
+        }
+        
+        @include small-mobile {
+            margin-top: 15px;
+            gap: 5px;
+        }
 
         &__dot {
             width: 4px;
@@ -189,6 +260,26 @@
                 &--active {
                     width: 40px;
                     height: 4px;
+                }
+            }
+            
+            @include mobile {
+                width: 30px;
+                height: 3px;
+                
+                &--active {
+                    width: 30px;
+                    height: 3px;
+                }
+            }
+            
+            @include small-mobile {
+                width: 25px;
+                height: 3px;
+                
+                &--active {
+                    width: 25px;
+                    height: 3px;
                 }
             }
         }
@@ -215,14 +306,34 @@
         
         @include mobile {
             padding: 20px;
+            border-radius: 20px;
+        }
+        
+        @include small-mobile {
+            padding: 15px;
+            border-radius: 15px;
         }
         
         &__quote {
             margin-bottom: 16px;
             padding: 0 35px;
             
+            @include mobile {
+                padding: 0 20px;
+            }
+            
+            @include small-mobile {
+                padding: 0 15px;
+                margin-bottom: 12px;
+            }
+            
             &__icon {
                 margin: 0;
+                
+                @include small-mobile {
+                    transform: scale(0.8);
+                    transform-origin: left top;
+                }
             }
         }
         
@@ -239,6 +350,24 @@
                 display: -webkit-box;
                 -webkit-line-clamp: 5;
                 -webkit-box-orient: vertical;
+                
+                @include tablet {
+                    font-size: 18px;
+                }
+                
+                @include mobile {
+                    font-size: 16px;
+                    padding: 0 20px;
+                    margin-bottom: 15px;
+                    -webkit-line-clamp: 4;
+                }
+                
+                @include small-mobile {
+                    font-size: 14px;
+                    padding: 0 15px;
+                    margin-bottom: 12px;
+                    -webkit-line-clamp: 3;
+                }
             }
             
             &__divider {
@@ -246,7 +375,17 @@
                 width: 87%;
                 background-color: $border-color;
                 margin: 20px auto;
-                padding: 0 35px;        
+                padding: 0 35px;
+                
+                @include mobile {
+                    margin: 15px auto;
+                    width: 90%;
+                }
+                
+                @include small-mobile {
+                    margin: 10px auto;
+                    width: 95%;
+                }
             }
             
             &__footer {
@@ -256,6 +395,11 @@
                 
                 @include mobile {
                     align-items: flex-start;
+                    padding: 0 20px;
+                }
+                
+                @include small-mobile {
+                    padding: 0 15px;
                 }
             }
             
@@ -271,6 +415,11 @@
                     flex-direction: column;
                     align-items: flex-start;
                     width: 100%;
+                    margin-left: 12px;
+                }
+                
+                @include small-mobile {
+                    margin-left: 8px;
                 }
             }
         }
@@ -281,6 +430,16 @@
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
+            
+            @include mobile {
+                width: 45px;
+                height: 45px;
+            }
+            
+            @include small-mobile {
+                width: 40px;
+                height: 40px;
+            }
             
             &__img {
                 width: 100%;
@@ -295,8 +454,17 @@
             color: $dark-text;
             margin-bottom: 4px;
             
+            @include tablet {
+                font-size: 18px;
+            }
+            
             @include mobile {
                 margin-bottom: 0;
+                font-size: 16px;
+            }
+            
+            @include small-mobile {
+                font-size: 14px;
             }
         }
         
@@ -305,11 +473,23 @@
             justify-content: flex-end;
             gap: 4px;
             
+            @include mobile {
+                margin-top: 8px;
+            }
+            
+            @include small-mobile {
+                gap: 2px;
+            }
+            
             &__star {
                 color: $border-color;
                 
                 &:nth-child(-n+4) {
                     color: $star-cl;
+                }
+                
+                @include small-mobile {
+                    transform: scale(0.9);
                 }
             }
         }
@@ -321,6 +501,17 @@
             color: $primary-color;
             text-decoration: none;
             font-weight: 500;
+            
+            @include mobile {
+                margin-top: 12px;
+                padding: 0 20px;
+            }
+            
+            @include small-mobile {
+                margin-top: 10px;
+                padding: 0 15px;
+                font-size: 14px;
+            }
             
             &:hover {
                 text-decoration: underline;
@@ -351,6 +542,30 @@
             &--bottom {
                 right: -15px;
                 bottom: -15px;
+            }
+        }
+        
+        @include mobile {
+            width: 40px;
+            height: 40px;
+            top: -25px;
+            left: 200px;
+            
+            &--bottom {
+                right: -10px;
+                bottom: -10px;
+            }
+        }
+        
+        @include small-mobile {
+            width: 30px;
+            height: 30px;
+            top: -15px;
+            left: 150px;
+            
+            &--bottom {
+                right: -5px;
+                bottom: -5px;
             }
         }
     }
