@@ -1,6 +1,7 @@
 @use "layout/" as *;
 @use "components";
 @use "pages";
+@use "abstracts" as *;
 
 * {
     margin: 0;
@@ -22,6 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: rgba($background-light, 0.1);
 }
 
 .footer {

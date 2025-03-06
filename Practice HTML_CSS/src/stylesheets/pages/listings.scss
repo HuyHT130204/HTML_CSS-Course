@@ -57,7 +57,7 @@
 
   &__description {
     font-size: 1rem;
-    color: $gray-text;
+    color: rgba($dark-text, 0.8);
     line-height: 1.5;
     max-width: 80%;
     overflow: hidden;
@@ -295,7 +295,7 @@
 
   &__description {
     font-size: 1rem;
-    color: $gray-text;
+    color: rgba($dark-text, 0.8);
     margin-bottom: 0.75rem;
     order: 3; // Keep description after title
 

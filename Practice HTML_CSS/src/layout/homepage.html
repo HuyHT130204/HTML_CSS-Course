@@ -40,21 +40,25 @@
                     <button class="search-tabs__btn active">For Sale</button>
                     <button class="search-tabs__btn">For Rent</button>
                 </div>
-
+        
                 <div class="search-form">
-                    <input type="text" placeholder="New York, San Francisco, etc" class="search-form__input">
+                    <!-- Sử dụng label ẩn với CSS -->
+                    <label for="location" class="visually-hidden">Location</label>
+                    <input type="text" id="location" placeholder="New York, San Francisco, etc" class="search-form__input">
                     
                     <div class="search-form__select">
-                        <select>
+                        <label for="propertyType" class="visually-hidden">Property Type</label>
+                        <select id="propertyType" aria-label="Property Type">
                             <option value="" disabled selected>Select Property Type</option>
                             <option value="house">House</option>
                             <option value="apartment">Apartment</option>
                             <option value="condo">Condo</option>
                         </select>
                     </div>
-
+        
                     <div class="search-form__select">
-                        <select>
+                        <label for="roomCount" class="visually-hidden">Number of Rooms</label>
+                        <select id="roomCount" aria-label="Number of Rooms">
                             <option value="" disabled selected>Select Rooms</option>
                             <option value="1">1 Room</option>
                             <option value="2">2 Rooms</option>
@@ -62,17 +66,17 @@
                             <option value="4">4+ Rooms</option>
                         </select>
                     </div>
-
+        
                     <a href="#" class="search-form__advanced">
                         <figure>
                             <img src="../assets/icons/advance.svg" alt="Advance">
                         </figure>
                         Advance Search
                     </a>
-
+        
                     <button class="search-form__submit">
                         <figure>
-                            <img src="../assets/icons/search.svg" alt="Search">
+                            <img src="../assets/icons/search.svg">
                         </figure>
                         Search
                     </button>
