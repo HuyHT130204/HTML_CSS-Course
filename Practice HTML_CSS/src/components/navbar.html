@@ -1,67 +1,70 @@
 <nav class="navbar">
-    <div class="container">
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">
-          <figure>
-            <img src="../assets/icons/hamburger.svg" alt="Menu" width="24" height="22">
-          </figure>
-        </label>
-        
-  
-      <div class="navbar__left">
-        <include
-          src="./components/list.html"
-          locals='{
-            "list": [
-              {"text": "Home", "active": true},
-              {"text": "About", "active": false},
-              {"text": "Listings", "active": false},
-              {"text": "Services", "active": false},
-              {"text": "Blogs", "active": false}
-            ]
-          }'
-        >
-        </include>
-      </div>
-  
-      <div class="navbar__center">
-        <include
-          src="./components/list.html"
-          locals='{
-            "list": [
-              {
-                "text": "Rezilla",
-                "iconSrc": "../assets/icons/logo.svg",
-                "iconAlt": "Home",
-                "className": "navbar__logo"
-              }
-            ]
-          }'
-        >
-        </include>
-      </div>
-  
-      <div class="navbar__right">
-        <include
-          src="./components/list.html"
-          locals='{
-            "list": [
-              {
-                "text": "Login/Register",
-                "iconSrc": "../assets/icons/login.svg",
-                "iconAlt": "Login",
-                "className": "navbar__login"
-              },
-              {
-                "text": "Add Listing",
-                "iconSrc": "../assets/icons/logo.svg",
-                "iconAlt": "Home",
-                "className": "navbar__addlisting"
-              }
-            ]
-          }'
-        >
-        </include>
-      </div>
+  <div class="container">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <figure>
+          <img src="../assets/icons/hamburger.svg" alt="Menu" width="24" height="22">
+        </figure>
+      </label>
+      
+
+    <div class="navbar__left">
+      <include
+        src="./components/list.html"
+        locals='{
+          "list": [
+            {"text": "Home", "href": "/", "active": true},
+            {"text": "About", "href": "/about", "active": false},
+            {"text": "Listings", "href": "/listings", "active": false},
+            {"text": "Services", "href": "/services", "active": false},
+            {"text": "Blogs", "href": "/blogs", "active": false}
+          ]
+        }'
+      >
+      </include>
     </div>
-  </nav>
+
+    <div class="navbar__center">
+      <include
+        src="./components/list.html"
+        locals='{
+          "list": [
+            {
+              "text": "Rezilla",
+              "href": "/",
+              "iconSrc": "../assets/icons/logo.svg",
+              "iconAlt": "Home",
+              "className": "navbar__logo"
+            }
+          ]
+        }'
+      >
+      </include>
+    </div>
+
+    <div class="navbar__right">
+      <include
+        src="./components/list.html"
+        locals='{
+          "list": [
+            {
+              "text": "Login/Register",
+              "href": "/login",
+              "iconSrc": "../assets/icons/login.svg",
+              "iconAlt": "Login",
+              "className": "navbar__login"
+            },
+            {
+              "text": "Add Listing",
+              "href": "/add-listing",
+              "iconSrc": "../assets/icons/logo.svg",
+              "iconAlt": "Home",
+              "className": "navbar__addlisting"
+            }
+          ]
+        }'
+      >
+      </include>
+    </div>
+  </div>
+</nav>

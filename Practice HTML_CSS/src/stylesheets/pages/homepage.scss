@@ -309,7 +309,7 @@
             font-size: 16px;
             background: $input-bg;
             appearance: none;
-            color: $input-text;
+            color: rgba($dark-text, 0.7);
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             
