@@ -1,7 +1,6 @@
 {
   "name": "html_css-course",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/pages/index.html",
     "build": "parcel build src/pages/index.html"
