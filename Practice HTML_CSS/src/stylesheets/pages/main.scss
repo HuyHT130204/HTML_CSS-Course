@@ -1,7 +1,6 @@
-@use "layout/" as *;
-@use "components";
-@use "pages";
-@use "abstracts" as *;
+@use "../layout/" as *;
+@use "../components/" as *;
+@use "../abstracts/" as *;
 
 * {
     margin: 0;

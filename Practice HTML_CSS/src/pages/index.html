@@ -8,21 +8,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/stylesheets/main.scss">
+    <link rel="stylesheet" href="/src/stylesheets/pages/main.scss">
 </head>
 <body>
     <div class="container">
         <div class="wrapper">
             <!-- Header -->
-            <include src="layout/header.html"></include>
-
+             <header>
+                <include src="layout/header.html"></include>
+            </header>
+            
             <!-- Main Content -->
-            <include src="layout/main.html"></include>
+            <main class="main">
+                <!-- Homepage -->
+                <include src="layout/homepage.html"></include>
+                <!-- About -->
+                <include src="layout/about.html"></include>
+                <!-- Listings -->
+                <include src="layout/listings.html"></include>
+                <!-- Services -->
+                <include src="layout/services.html"></include>
+                <!-- Areas -->
+                <include src="layout/areas.html"></include>
+                <!-- Team -->
+                <include src="layout/team.html"></include>
+                <!-- Blogs -->
+                <include src="layout/blogs.html"></include>
+                <!-- Testimonials -->
+                <include src="layout/testimonials.html"></include>
+                <!-- Banner -->
+                <include src="layout/banner.html"></include>
+            </main>
 
             <!-- Footer - Separate from main content -->
-            <div class="footer">
+            <footer class="footer">
                 <include src="layout/footer.html"></include>
-            </div>
+            </footer>
         </div>
     </div>
 </body>

@@ -227,16 +227,16 @@
     }
     
     &--popular::before {
-      background-image: url('../assets/icons/fire.svg');
+      background-image: url('/src/assets/icons/fire.svg');
       
     }
     
     &--new::before {
-      background-image: url('../assets/icons/home.svg');
+      background-image: url('/src/assets/icons/home.svg');
     }
     
     &--discount::before {
-      background-image: url('../assets/icons/money.svg');
+      background-image: url('/src/assets/icons/money.svg');
     }
   
     .listings__item--popular & {
@@ -331,13 +331,13 @@
         background-size: contain;
       }
       &:nth-child(1)::before {
-        background-image: url('../assets/icons/bed.svg');
+        background-image: url('/src/assets/icons/bed.svg');
         width: 30px;
         height: 21.5px;
       }
       
       &:nth-child(2)::before {
-        background-image: url('../assets/icons/bath.svg');
+        background-image: url('/src/assets/icons/bath.svg');
         width: 24px;
         height: 24.06px;
       }
